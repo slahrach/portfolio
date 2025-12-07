@@ -61,7 +61,7 @@ export default function Hero() {
 								transform: isHovered 
 									? `translate(${spread.x}px, ${spread.y}px) rotate(${spread.rotate}deg) scale(1)`
 									: `translate(0px, 0px) rotate(0deg) scale(0.9)`,
-								opacity: isHovered ? 1 : 0.6,
+								opacity: isHovered ? 1 : 0,
 								transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s`,
 							}}
 						>
