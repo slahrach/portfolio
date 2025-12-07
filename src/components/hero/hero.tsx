@@ -7,127 +7,79 @@ export default function Hero() {
 	const [isHovered, setIsHovered] = useState(false);
 	const baseText = "text-[26px] md:text-[32px] font-semibold tracking-[-0.02em]";
 
-	// Using the two available images alternating
+	// All using projet1.avif as requested
 	const projects = [
 		{ src: "/projet1.avif", position: "top-left" },
-		{ src: "/project2.avif", position: "top-right" },
+		{ src: "/projet1.avif", position: "top-right" },
 		{ src: "/projet1.avif", position: "bottom-left" },
-		{ src: "/project2.avif", position: "bottom-center" },
+		{ src: "/projet1.avif", position: "bottom-center" },
 		{ src: "/projet1.avif", position: "bottom-right" }
 	];
 
-	const getPositionStyles = (position: string): React.CSSProperties => {
+	// Final spread positions when hovered - much more spread out
+	const getSpreadPosition = (position: string) => {
 		switch (position) {
 			case "top-left":
-				return { 
-					top: "-160px", 
-					left: "-120px", 
-					transform: "rotate(-8deg)",
-					zIndex: 0
-				};
+				return { x: -320, y: -180, rotate: -15 };
 			case "top-right":
-				return { 
-					top: "-140px", 
-					right: "-120px", 
-					transform: "rotate(8deg)",
-					zIndex: 0
-				};
+				return { x: 320, y: -180, rotate: 15 };
 			case "bottom-left":
-				return { 
-					bottom: "-120px", 
-					left: "-140px", 
-					transform: "rotate(-8deg)",
-					zIndex: 0
-				};
+				return { x: -300, y: 160, rotate: -12 };
 			case "bottom-center":
-				return { 
-					bottom: "-160px", 
-					left: "50%", 
-					transform: "translateX(-50%) rotate(0deg)",
-					zIndex: 0
-				};
+				return { x: 0, y: 240, rotate: 0 };
 			case "bottom-right":
-				return { 
-					bottom: "-100px", 
-					right: "-120px", 
-					transform: "rotate(8deg)",
-					zIndex: 0
-				};
+				return { x: 300, y: 160, rotate: 12 };
 			default:
-				return {};
+				return { x: 0, y: 0, rotate: 0 };
 		}
 	};
 
-	const getHoverTransform = (position: string) => {
-		switch (position) {
-			case "top-left":
-				return "rotate(-8deg) scale(1)";
-			case "top-right":
-				return "rotate(8deg) scale(1)";
-			case "bottom-left":
-				return "rotate(-8deg) scale(1)";
-			case "bottom-center":
-				return "translateX(-50%) rotate(0deg) scale(1)";
-			case "bottom-right":
-				return "rotate(8deg) scale(1)";
-			default:
-				return "scale(1)";
-		}
-	};
-
-	const getInitialTransform = (position: string) => {
-		switch (position) {
-			case "top-left":
-				return "rotate(-8deg) scale(0.85) translateY(20px)";
-			case "top-right":
-				return "rotate(8deg) scale(0.85) translateY(20px)";
-			case "bottom-left":
-				return "rotate(-8deg) scale(0.85) translateY(-20px)";
-			case "bottom-center":
-				return "translateX(-50%) rotate(0deg) scale(0.85) translateY(-20px)";
-			case "bottom-right":
-				return "rotate(8deg) scale(0.85) translateY(-20px)";
-			default:
-				return "scale(0.85)";
-		}
+	// No stagger - all cards fan out at the same time
+	const getDelay = () => {
+		return 0;
 	};
 
 	return (
 		<section className="flex flex-col items-center justify-center w-full px-5 md:px-6 py-10 md:py-14 relative z-10 overflow-visible">
 			<div 
-				className="relative flex justify-center"
+				className="relative flex justify-center items-center"
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}
 				style={{ width: "fit-content" }}
 			>
-				{/* Project mockups that appear on hover */}
+				{/* Project mockups - stacked in center, fan out on hover */}
 				{projects.map((project, index) => {
-					const posStyles = getPositionStyles(project.position);
+					const spread = getSpreadPosition(project.position);
+					const delay = getDelay(index);
+					
 					return (
 						<div
 							key={index}
-							className="absolute transition-all duration-500 ease-out pointer-events-none"
+							className="absolute pointer-events-none"
 							style={{
-								...posStyles,
-								opacity: isHovered ? 1 : 0,
+								zIndex: isHovered ? index : 5 - index,
 								transform: isHovered 
-									? getHoverTransform(project.position)
-									: getInitialTransform(project.position),
+									? `translate(${spread.x}px, ${spread.y}px) rotate(${spread.rotate}deg) scale(1)`
+									: `translate(0px, 0px) rotate(0deg) scale(0.9)`,
+								opacity: isHovered ? 1 : 0.6,
+								transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s`,
 							}}
 						>
 							<div 
 								className="rounded-[16px] overflow-hidden"
 								style={{
-									width: "160px",
-									height: "200px",
-									boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)"
+									width: "200px",
+									height: "150px",
+									boxShadow: isHovered 
+										? "0 25px 50px rgba(0, 0, 0, 0.35)"
+										: "0 10px 30px rgba(0, 0, 0, 0.2)"
 								}}
 							>
 								<Image
 									src={project.src}
 									alt={`Project ${index + 1}`}
-									width={160}
-									height={200}
+									width={200}
+									height={150}
 									className="w-full h-full object-cover"
 								/>
 							</div>
@@ -194,12 +146,12 @@ export default function Hero() {
 									boxShadow: "0 14px 30px rgba(246, 152, 81, 0.38)"
 								}}
 							>
-								<span className="text-white">reliable software,</span>
+								<span className="text-white"> solutions,</span>
 							</span>
 						</div>
 
 						<div className="flex items-center gap-[10px] justify-center whitespace-nowrap">
-							<span className={baseText}>concept to </span>
+							<span className={baseText}>from </span>
 							<span
 								className={`px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
@@ -207,7 +159,7 @@ export default function Hero() {
 									boxShadow: "0 12px 28px rgba(104, 204, 122, 0.28)"
 								}}
 							>
-								<span className="text-white">launch.</span>
+								<span className="text-white">concept to launch.</span>
 							</span>
 						</div>
 					</div>
