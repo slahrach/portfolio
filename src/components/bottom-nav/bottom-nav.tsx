@@ -3,13 +3,13 @@
 import { useState } from "react";
 
 const HomeIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
 		<path d="M3 9.5L12 3l9 6.5V21a1 1 0 01-1 1h-5a1 1 0 01-1-1v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" strokeLinecap="round" strokeLinejoin="round"/>
 	</svg>
 );
 
 const ProjectsIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
 		<rect x="3" y="3" width="7" height="7" rx="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 		<rect x="14" y="3" width="7" height="7" rx="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 		<rect x="3" y="14" width="7" height="7" rx="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -18,14 +18,14 @@ const ProjectsIcon = () => (
 );
 
 const AboutIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
 		<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" strokeLinecap="round" strokeLinejoin="round"/>
 		<circle cx="12" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round"/>
 	</svg>
 );
 
 const LinkedInIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
 		<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" strokeLinecap="round" strokeLinejoin="round"/>
 		<rect x="2" y="9" width="4" height="12" strokeLinecap="round" strokeLinejoin="round"/>
 		<circle cx="4" cy="4" r="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -33,13 +33,13 @@ const LinkedInIcon = () => (
 );
 
 const GitHubIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
 		<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" strokeLinecap="round" strokeLinejoin="round"/>
 	</svg>
 );
 
 const MailIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
 		<rect x="2" y="4" width="20" height="16" rx="2" strokeLinecap="round" strokeLinejoin="round"/>
 		<path d="M22 7l-10 6L2 7" strokeLinecap="round" strokeLinejoin="round"/>
 	</svg>
@@ -49,18 +49,18 @@ export default function BottomNav() {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-	// Pages group
+	// Pages group with girly/pastel colors
 	const pageItems = [
-		{ Icon: HomeIcon, label: "Home", href: "/" },
-		{ Icon: ProjectsIcon, label: "Projects", href: "#projects" },
-		{ Icon: AboutIcon, label: "About me", href: "#about" },
+		{ Icon: HomeIcon, label: "Home", href: "/", color: "#FFB58D", shadow: "rgba(255, 181, 141, 0.4)", darkIcon: false }, // Soft peach/coral orange
+		{ Icon: ProjectsIcon, label: "Projects", href: "#projects", color: "#A78BFA", shadow: "rgba(167, 139, 250, 0.4)", darkIcon: false }, // Lavender
+		{ Icon: AboutIcon, label: "About me", href: "#about", color: "#F9A8D4", shadow: "rgba(249, 168, 212, 0.4)", darkIcon: false }, // Soft pink
 	];
 
-	// Socials group
+	// Socials group with girly/pastel colors
 	const socialItems = [
-		{ Icon: LinkedInIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/sara-lahrach/", external: true },
-		{ Icon: GitHubIcon, label: "GitHub", href: "https://github.com/slahrach", external: true },
-		{ Icon: MailIcon, label: "Email", href: "mailto:slahrach.me@gmail.com" },
+		{ Icon: LinkedInIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/sara-lahrach/", external: true, color: "#7DD3FC", shadow: "rgba(125, 211, 252, 0.4)", darkIcon: false }, // Sky blue
+		{ Icon: GitHubIcon, label: "GitHub", href: "https://github.com/slahrach", external: true, color: "#FFF6A5", shadow: "rgba(255, 246, 165, 0.4)", darkIcon: true }, // Cold pastel yellow
+		{ Icon: MailIcon, label: "Email", href: "mailto:slahrach.me@gmail.com", color: "#5EEAD4", shadow: "rgba(94, 234, 212, 0.4)", darkIcon: false }, // Teal/mint
 	];
 
 	const handleClick = (index: number, href: string, external?: boolean) => {
@@ -72,7 +72,17 @@ export default function BottomNav() {
 		}
 	};
 
-	const NavButton = ({ item, index, globalIndex }: { item: { Icon: () => JSX.Element; label: string; href: string; external?: boolean }, index: number, globalIndex: number }) => {
+	type NavItem = { 
+		Icon: () => JSX.Element; 
+		label: string; 
+		href: string; 
+		external?: boolean;
+		color: string;
+		shadow: string;
+		darkIcon: boolean;
+	};
+
+	const NavButton = ({ item, globalIndex }: { item: NavItem, globalIndex: number }) => {
 		const isActive = globalIndex === activeIndex;
 		const isHovered = globalIndex === hoveredIndex;
 		
@@ -102,15 +112,14 @@ export default function BottomNav() {
 						alignItems: 'center',
 						justifyContent: 'center',
 						borderRadius: '15px',
-						background: isActive 
-							? '#F69851'
+						background: (isActive || isHovered)
+							? item.color
 							: 'transparent',
-						border: isActive 
+						border: (isActive || isHovered)
 							? 'none'
 							: '1px solid rgba(255, 255, 255, 0.14)',
-						boxShadow: isActive 
-							? '0 10px 22px rgba(246, 152, 81, 0.4)'
-							: 'none',
+						boxShadow: 'none',
+						color: (isActive || isHovered) && item.darkIcon ? '#333' : '#fff',
 					}}
 					aria-label={item.label}
 				>
@@ -149,7 +158,7 @@ export default function BottomNav() {
 				<div className="flex gap-2.5 items-center">
 					{/* Pages group */}
 					{pageItems.map((item, index) => (
-						<NavButton key={index} item={item} index={index} globalIndex={index} />
+						<NavButton key={index} item={item} globalIndex={index} />
 					))}
 					
 					{/* Divider */}
@@ -160,7 +169,7 @@ export default function BottomNav() {
 					
 					{/* Socials group */}
 					{socialItems.map((item, index) => (
-						<NavButton key={index + pageItems.length} item={item} index={index} globalIndex={index + pageItems.length} />
+						<NavButton key={index + pageItems.length} item={item} globalIndex={index + pageItems.length} />
 					))}
 				</div>
 			</div>

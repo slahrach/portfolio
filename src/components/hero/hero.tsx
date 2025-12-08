@@ -128,8 +128,7 @@ export default function Hero() {
 							<span
 								className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
-									background: "#8A5BE7",
-									boxShadow: "0 12px 26px rgba(138, 91, 231, 0.32)"
+									background: "#F9A8D4"
 								}}
 							>
 								<span className="text-white">Sara</span>
@@ -142,8 +141,7 @@ export default function Hero() {
 							<span
 								className={`px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
-									background: "#F69851",
-									boxShadow: "0 14px 30px rgba(246, 152, 81, 0.38)"
+									background: "#6EE7B7"
 								}}
 							>
 								<span className="text-white">reliable solutions,</span>
@@ -155,8 +153,7 @@ export default function Hero() {
 							<span
 								className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
-									background: "#68CC7A",
-									boxShadow: "0 12px 28px rgba(104, 204, 122, 0.28)"
+									background: "#FFB58D"
 								}}
 							>
 								<span className="text-white">launch</span>
