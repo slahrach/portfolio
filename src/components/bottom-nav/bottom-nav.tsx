@@ -51,9 +51,9 @@ export default function BottomNav() {
 
 	// Pages group with girly/pastel colors
 	const pageItems = [
-		{ Icon: HomeIcon, label: "Home", href: "/", color: "#FFB58D", shadow: "rgba(255, 181, 141, 0.4)", darkIcon: false }, // Soft peach/coral orange
+		{ Icon: HomeIcon, label: "Home", href: "/", color: "#F9A8D4", shadow: "rgba(249, 168, 212, 0.4)", darkIcon: false }, // Soft pink
 		{ Icon: ProjectsIcon, label: "Projects", href: "#projects", color: "#A78BFA", shadow: "rgba(167, 139, 250, 0.4)", darkIcon: false }, // Lavender
-		{ Icon: AboutIcon, label: "About me", href: "#about", color: "#F9A8D4", shadow: "rgba(249, 168, 212, 0.4)", darkIcon: false }, // Soft pink
+		{ Icon: AboutIcon, label: "About me", href: "#about", color: "#FFB58D", shadow: "rgba(255, 181, 141, 0.4)", darkIcon: false }, // Soft peach/coral orange
 	];
 
 	// Socials group with girly/pastel colors

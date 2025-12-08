@@ -153,11 +153,11 @@ export default function Hero() {
 							<span
 								className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
-									background: "#FFB58D"
+									background: "#FFF6A5"
 								}}
 							>
-								<span className="text-white">launch</span>
-								<svg className="w-7 h-7 md:w-8 md:h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+								<span className="text-gray-800">launch</span>
+								<svg className="w-7 h-7 md:w-8 md:h-8 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
 									<path d="M7 17L17 7M17 7H10M17 7V14" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
 							</span>
