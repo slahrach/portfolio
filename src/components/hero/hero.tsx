@@ -153,7 +153,7 @@ export default function Hero() {
 							<span
 								className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
-									background: "#FFF6A5"
+									background: "#FFF389"
 								}}
 							>
 								<span className="text-gray-800">launch</span>
