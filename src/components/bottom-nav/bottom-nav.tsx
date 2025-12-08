@@ -8,15 +8,7 @@ const HomeIcon = () => (
 	</svg>
 );
 
-const PenIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
-		<path d="M12 19l7-7 3 3-7 7-3-3z" strokeLinecap="round" strokeLinejoin="round"/>
-		<path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" strokeLinecap="round" strokeLinejoin="round"/>
-		<path d="M2 2l7.586 7.586" strokeLinecap="round" strokeLinejoin="round"/>
-	</svg>
-);
-
-const GridIcon = () => (
+const ProjectsIcon = () => (
 	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
 		<rect x="3" y="3" width="7" height="7" rx="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 		<rect x="14" y="3" width="7" height="7" rx="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -25,10 +17,24 @@ const GridIcon = () => (
 	</svg>
 );
 
-const AtIcon = () => (
+const AboutIcon = () => (
 	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
-		<circle cx="12" cy="12" r="4" strokeLinecap="round" strokeLinejoin="round"/>
-		<path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-4 8" strokeLinecap="round" strokeLinejoin="round"/>
+		<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" strokeLinecap="round" strokeLinejoin="round"/>
+		<circle cx="12" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round"/>
+	</svg>
+);
+
+const LinkedInIcon = () => (
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+		<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" strokeLinecap="round" strokeLinejoin="round"/>
+		<rect x="2" y="9" width="4" height="12" strokeLinecap="round" strokeLinejoin="round"/>
+		<circle cx="4" cy="4" r="2" strokeLinecap="round" strokeLinejoin="round"/>
+	</svg>
+);
+
+const GitHubIcon = () => (
+	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
+		<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" strokeLinecap="round" strokeLinejoin="round"/>
 	</svg>
 );
 
@@ -39,32 +45,90 @@ const MailIcon = () => (
 	</svg>
 );
 
-const TwitterIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
-		<path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" strokeLinecap="round" strokeLinejoin="round"/>
-	</svg>
-);
-
-const CartIcon = () => (
-	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5">
-		<circle cx="9" cy="21" r="1" strokeLinecap="round" strokeLinejoin="round"/>
-		<circle cx="20" cy="21" r="1" strokeLinecap="round" strokeLinejoin="round"/>
-		<path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" strokeLinecap="round" strokeLinejoin="round"/>
-	</svg>
-);
-
 export default function BottomNav() {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-	const navItems = [
-		{ Icon: HomeIcon, label: "Home" },
-		{ Icon: PenIcon, label: "Design" },
-		{ Icon: GridIcon, label: "Projects" },
-		{ Icon: AtIcon, label: "About" },
-		{ Icon: MailIcon, label: "Contact" },
-		{ Icon: TwitterIcon, label: "Twitter" },
-		{ Icon: CartIcon, label: "Shop" }
+	// Pages group
+	const pageItems = [
+		{ Icon: HomeIcon, label: "Home", href: "/" },
+		{ Icon: ProjectsIcon, label: "Projects", href: "#projects" },
+		{ Icon: AboutIcon, label: "About me", href: "#about" },
 	];
+
+	// Socials group
+	const socialItems = [
+		{ Icon: LinkedInIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/sara-lahrach/", external: true },
+		{ Icon: GitHubIcon, label: "GitHub", href: "https://github.com/slahrach", external: true },
+		{ Icon: MailIcon, label: "Email", href: "mailto:slahrach.me@gmail.com" },
+	];
+
+	const handleClick = (index: number, href: string, external?: boolean) => {
+		setActiveIndex(index);
+		if (external) {
+			window.open(href, "_blank", "noopener,noreferrer");
+		} else if (href.startsWith("mailto:")) {
+			window.location.href = href;
+		}
+	};
+
+	const NavButton = ({ item, index, globalIndex }: { item: { Icon: () => JSX.Element; label: string; href: string; external?: boolean }, index: number, globalIndex: number }) => {
+		const isActive = globalIndex === activeIndex;
+		const isHovered = globalIndex === hoveredIndex;
+		
+		return (
+			<div className="relative">
+				{/* Tooltip */}
+				<div 
+					className="absolute left-1/2 -translate-x-1/2 -top-10 px-3 py-1.5 rounded-lg text-white text-sm font-medium whitespace-nowrap transition-all duration-200 pointer-events-none"
+					style={{
+						background: 'rgba(33, 33, 33, 0.9)',
+						opacity: isHovered ? 1 : 0,
+						transform: isHovered ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(8px)',
+					}}
+				>
+					{item.label}
+				</div>
+				
+				<button
+					onClick={() => handleClick(globalIndex, item.href, item.external)}
+					onMouseEnter={() => setHoveredIndex(globalIndex)}
+					onMouseLeave={() => setHoveredIndex(null)}
+					className="relative transition-all duration-200 hover:scale-105 active:scale-95"
+					style={{
+						width: '50px',
+						height: '50px',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						borderRadius: '15px',
+						background: isActive 
+							? '#F69851'
+							: 'transparent',
+						border: isActive 
+							? 'none'
+							: '1px solid rgba(255, 255, 255, 0.14)',
+						boxShadow: isActive 
+							? '0 10px 22px rgba(246, 152, 81, 0.4)'
+							: 'none',
+					}}
+					aria-label={item.label}
+				>
+					<item.Icon />
+					
+					{/* Active indicator line */}
+					<div 
+						className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[3px] rounded-full transition-all duration-300"
+						style={{
+							width: isActive ? '20px' : '0px',
+							background: isActive ? '#F69851' : 'transparent',
+							opacity: isActive ? 1 : 0,
+						}}
+					/>
+				</button>
+			</div>
+		);
+	};
 
 	return (
 		<nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
@@ -83,36 +147,21 @@ export default function BottomNav() {
 				}}
 			>
 				<div className="flex gap-2.5 items-center">
-					{navItems.map((item, index) => {
-						const isActive = index === activeIndex;
-						return (
-							<button
-								key={index}
-								onClick={() => setActiveIndex(index)}
-								className="transition-all duration-200 hover:scale-105 active:scale-95"
-								style={{
-									width: '50px',
-									height: '50px',
-									display: 'flex',
-									alignItems: 'center',
-									justifyContent: 'center',
-									borderRadius: '15px',
-									background: isActive 
-										? '#F69851'
-										: 'transparent',
-									border: isActive 
-										? 'none'
-										: '1px solid rgba(255, 255, 255, 0.14)',
-									boxShadow: isActive 
-										? '0 10px 22px rgba(246, 152, 81, 0.4)'
-										: 'none',
-								}}
-								aria-label={item.label}
-							>
-								<item.Icon />
-							</button>
-						);
-					})}
+					{/* Pages group */}
+					{pageItems.map((item, index) => (
+						<NavButton key={index} item={item} index={index} globalIndex={index} />
+					))}
+					
+					{/* Divider */}
+					<div 
+						className="h-8 w-[1px] mx-1"
+						style={{ background: 'rgba(255, 255, 255, 0.12)' }}
+					/>
+					
+					{/* Socials group */}
+					{socialItems.map((item, index) => (
+						<NavButton key={index + pageItems.length} item={item} index={index} globalIndex={index + pageItems.length} />
+					))}
 				</div>
 			</div>
 		</nav>

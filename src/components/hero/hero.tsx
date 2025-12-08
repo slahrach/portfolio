@@ -146,12 +146,12 @@ export default function Hero() {
 									boxShadow: "0 14px 30px rgba(246, 152, 81, 0.38)"
 								}}
 							>
-								<span className="text-white"> solutions,</span>
+								<span className="text-white">reliable solutions,</span>
 							</span>
 						</div>
 
 						<div className="flex items-center gap-[10px] justify-center whitespace-nowrap">
-							<span className={baseText}>from </span>
+							<span className={baseText}>concept to </span>
 							<span
 								className={`px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
@@ -159,7 +159,7 @@ export default function Hero() {
 									boxShadow: "0 12px 28px rgba(104, 204, 122, 0.28)"
 								}}
 							>
-								<span className="text-white">concept to launch.</span>
+								<span className="text-white">launch.</span>
 							</span>
 						</div>
 					</div>
