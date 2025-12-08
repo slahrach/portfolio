@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
 	const [isHovered, setIsHovered] = useState(false);
-	const baseText = "text-[26px] md:text-[32px] font-semibold tracking-[-0.02em]";
+	const baseText = "text-[28px] md:text-[34px] font-semibold tracking-[-0.02em]";
 
 	// All using projet1.avif as requested
 	const projects = [
@@ -50,7 +50,7 @@ export default function Hero() {
 				{/* Project mockups - stacked in center, fan out on hover */}
 				{projects.map((project, index) => {
 					const spread = getSpreadPosition(project.position);
-					const delay = getDelay(index);
+					const delay = getDelay();
 					
 					return (
 						<div
@@ -151,15 +151,18 @@ export default function Hero() {
 						</div>
 
 						<div className="flex items-center gap-[10px] justify-center whitespace-nowrap">
-							<span className={baseText}>concept to </span>
+							<span className={baseText}>Concept to </span>
 							<span
-								className={`px-3 py-1.5 rounded-[10px] ${baseText}`}
+								className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] ${baseText}`}
 								style={{
 									background: "#68CC7A",
 									boxShadow: "0 12px 28px rgba(104, 204, 122, 0.28)"
 								}}
 							>
-								<span className="text-white">launch.</span>
+								<span className="text-white">launch</span>
+								<svg className="w-7 h-7 md:w-8 md:h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+									<path d="M7 17L17 7M17 7H10M17 7V14" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
 							</span>
 						</div>
 					</div>

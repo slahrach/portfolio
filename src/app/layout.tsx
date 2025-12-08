@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({
+const sora = Sora({
 	subsets: ["latin"],
 	weight: ["400", "500", "600", "700"],
 	display: "swap",
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="dark">
-			<body className={cn(inter.className, "dark min-h-screen mesh-gradient-bg antialiased")}>
+			<body className={cn(sora.className, "dark min-h-screen mesh-gradient-bg antialiased")}>
 				<div className="noise-overlay" />
 				{children}
 				<Analytics />
