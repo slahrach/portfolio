@@ -118,10 +118,10 @@ export default function BottomNav() {
 					
 					{/* Active indicator line */}
 					<div 
-						className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[3px] rounded-full transition-all duration-300"
+						className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[2px] rounded-full transition-all duration-300"
 						style={{
-							width: isActive ? '20px' : '0px',
-							background: isActive ? '#F69851' : 'transparent',
+							width: isActive ? '12px' : '0px',
+							background: isActive ? 'rgba(255, 255, 255, 0.5)' : 'transparent',
 							opacity: isActive ? 1 : 0,
 						}}
 					/>
@@ -154,8 +154,8 @@ export default function BottomNav() {
 					
 					{/* Divider */}
 					<div 
-						className="h-8 w-[1px] mx-1"
-						style={{ background: 'rgba(255, 255, 255, 0.12)' }}
+						className="h-5 w-[1px] mx-1"
+						style={{ background: 'rgba(255, 255, 255, 0.1)' }}
 					/>
 					
 					{/* Socials group */}
