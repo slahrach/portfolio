@@ -54,6 +54,7 @@ export default function BottomNav() {
 	// Determine active index based on current pathname
 	const getActiveIndex = () => {
 		if (pathname === "/about") return 2; // About me
+		if (pathname === "/projects") return 1; // Projects
 		if (pathname === "/" || pathname.startsWith("/#")) return 0; // Home
 		return 0; // Default to home
 	};
@@ -69,7 +70,7 @@ export default function BottomNav() {
 	// Pages group with girly/pastel colors
 	const pageItems = [
 		{ Icon: HomeIcon, label: "Home", tooltip: null, href: "/", external: false, color: "#F9A8D4", shadow: "rgba(249, 168, 212, 0.4)", darkIcon: false }, // Soft pink
-		{ Icon: ProjectsIcon, label: "Projects", tooltip: null, href: "#projects", external: false, color: "#A78BFA", shadow: "rgba(167, 139, 250, 0.4)", darkIcon: false }, // Lavender
+		{ Icon: ProjectsIcon, label: "Projects", tooltip: null, href: "/projects", external: false, color: "#A78BFA", shadow: "rgba(167, 139, 250, 0.4)", darkIcon: false }, // Lavender
 		{ Icon: AboutIcon, label: "About me", tooltip: null, href: "/about", external: false, color: "#FFB58D", shadow: "rgba(255, 181, 141, 0.4)", darkIcon: false }, // Soft peach/coral orange
 	];
 
