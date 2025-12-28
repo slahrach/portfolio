@@ -2,13 +2,16 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Projects() {
+	const router = useRouter();
 	const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 	const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
 
 	const projects = [
 		{
+			slug: "nexus",
 			title: "Nexus",
 			description: "Designing the Nexus app",
 			tags: ["UX DESIGN", "RESEARCH"],
@@ -16,6 +19,7 @@ export default function Projects() {
 			gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)"
 		},
 		{
+			slug: "genie",
 			title: "Genie",
 			description: "Evolving the Genie app design language",
 			tags: ["UX DESIGN", "BRANDING"],
@@ -23,6 +27,7 @@ export default function Projects() {
 			gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		},
 		{
+			slug: "flow",
 			title: "Flow",
 			description: "Building a seamless workflow platform",
 			tags: ["FULL-STACK", "DEVOPS"],
@@ -30,6 +35,7 @@ export default function Projects() {
 			gradient: "linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)"
 		},
 		{
+			slug: "aurora",
 			title: "Aurora",
 			description: "Creating an AI-powered analytics dashboard",
 			tags: ["BACKEND", "AI"],
@@ -58,8 +64,8 @@ export default function Projects() {
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 					{projects.map((project, index) => {
 						const isHovered = hoveredProject === index;
-						const tiltX = mousePosition && isHovered ? (mousePosition.y - 0.5) * 10 : 0;
-						const tiltY = mousePosition && isHovered ? (mousePosition.x - 0.5) * -10 : 0;
+						const tiltX = mousePosition && isHovered ? (mousePosition.y - 0.5) * 15 : 0;
+						const tiltY = mousePosition && isHovered ? (mousePosition.x - 0.5) * -15 : 0;
 						
 						return (
 						<div
@@ -77,15 +83,31 @@ export default function Projects() {
 									setMousePosition({ x, y });
 								}
 							}}
-							className="relative transition-all duration-300"
+							onClick={() => router.push(`/projects/${project.slug}`)}
+							className="relative cursor-pointer"
 							style={{
-								transform: isHovered 
-									? `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-8px) scale(1.02)`
-									: "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)",
+								perspective: "1000px",
 								transformStyle: "preserve-3d",
 							}}
 						>
-							<div className="relative" style={cardStyle}>
+							<div 
+								className="relative transition-all duration-300 ease-out"
+								style={{
+									...cardStyle,
+									transform: isHovered 
+										? `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-12px) translateZ(20px) scale(1.03)`
+										: "rotateX(0deg) rotateY(0deg) translateY(0px) translateZ(0px) scale(1)",
+									transformStyle: "preserve-3d",
+									boxShadow: isHovered
+										? [
+												"0 0 0 1px rgba(255, 255, 255, 0.03)",
+												"0 4px 8px rgba(0, 0, 0, 0.15)",
+												"0 12px 24px rgba(0, 0, 0, 0.2)",
+												"0 32px 64px rgba(0, 0, 0, 0.3)"
+											].join(", ")
+										: cardStyle.boxShadow,
+								}}
+							>
 								<div
 									className="absolute inset-0 rounded-[40px] blur-[44px] pointer-events-none -z-10"
 									style={{
