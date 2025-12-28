@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import BottomNav from "@/components/bottom-nav/bottom-nav";
 import Footer from "@/components/footer/footer";
@@ -74,25 +73,34 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 	return (
 		<div className="mesh-gradient-bg flex flex-col min-h-screen w-full relative z-10">
 			<span className="noise-overlay" />
-			<main className="flex-1 flex flex-col items-center w-full pb-32 pt-12 md:pt-16">
+			
+			{/* Fixed top navigation bar with X button */}
+			<nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center py-4 px-5 md:px-6">
+				<button
+					onClick={() => router.push("/projects")}
+					className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+					style={{
+						background: "rgba(33, 33, 33, 0.85)",
+						backdropFilter: "blur(12px)",
+						WebkitBackdropFilter: "blur(12px)",
+						border: "1px solid rgba(255, 255, 255, 0.1)",
+						boxShadow: [
+							"0 0 0 1px rgba(255, 255, 255, 0.05)",
+							"0 4px 12px rgba(0, 0, 0, 0.3)",
+							"0 8px 24px rgba(0, 0, 0, 0.4)"
+						].join(", "),
+					}}
+					aria-label="Close"
+				>
+					<svg className="w-6 h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+						<line x1="18" y1="6" x2="6" y2="18" strokeLinecap="round" />
+						<line x1="6" y1="6" x2="18" y2="18" strokeLinecap="round" />
+					</svg>
+				</button>
+			</nav>
+
+			<main className="flex-1 flex flex-col items-center w-full pb-32 pt-20 md:pt-24">
 				<div className="w-full max-w-[900px] px-5 md:px-6">
-					{/* Close button */}
-					<button
-						onClick={() => router.push("/projects")}
-						className="mb-8 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 hover:bg-white/10"
-						style={{
-							background: "rgba(33, 33, 33, 0.74)",
-							backdropFilter: "blur(12px)",
-							WebkitBackdropFilter: "blur(12px)",
-							border: "1px solid rgba(255, 255, 255, 0.06)",
-						}}
-						aria-label="Close"
-					>
-						<svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-							<line x1="18" y1="6" x2="6" y2="18" strokeLinecap="round" />
-							<line x1="6" y1="6" x2="18" y2="18" strokeLinecap="round" />
-						</svg>
-					</button>
 
 					{/* Project images */}
 					<div className="relative mb-8" style={cardStyle}>
