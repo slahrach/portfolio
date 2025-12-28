@@ -18,19 +18,19 @@ export default function Hero() {
 		{ src: "/projet1.avif", position: "bottom-right", slug: "nexus" }
 	];
 
-	// Final spread positions when hovered - much more spread out
+	// Final spread positions when hovered - cards positioned around main card, partially behind it
 	const getSpreadPosition = (position: string) => {
 		switch (position) {
 			case "top-left":
-				return { x: -320, y: -180, rotate: -15 };
+				return { x: -180, y: -100, rotate: -15 };
 			case "top-right":
-				return { x: 320, y: -180, rotate: 15 };
+				return { x: 180, y: -100, rotate: 15 };
 			case "bottom-left":
-				return { x: -300, y: 160, rotate: -12 };
+				return { x: -200, y: 120, rotate: -12 };
 			case "bottom-center":
-				return { x: 0, y: 240, rotate: 0 };
+				return { x: 0, y: 180, rotate: 0 };
 			case "bottom-right":
-				return { x: 300, y: 160, rotate: 12 };
+				return { x: 200, y: 120, rotate: 12 };
 			default:
 				return { x: 0, y: 0, rotate: 0 };
 		}
