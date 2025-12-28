@@ -22,9 +22,9 @@ export default function Hero() {
 	const getSpreadPosition = (position: string) => {
 		switch (position) {
 			case "top-left":
-				return { x: -180, y: -140, rotate: -15 };
+				return { x: -180, y: -160, rotate: -15 };
 			case "top-right":
-				return { x: 180, y: -140, rotate: 15 };
+				return { x: 180, y: -160, rotate: 15 };
 			case "bottom-left":
 				return { x: -260, y: 140, rotate: -12 };
 			case "bottom-center":
