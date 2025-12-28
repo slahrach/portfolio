@@ -8,19 +8,19 @@ import Footer from "@/components/footer/footer";
 const projects = {
 	nexus: {
 		title: "Nexus",
-		description: "Designing the Nexus app",
-		tags: ["UX DESIGN", "RESEARCH"],
+		description: "Building a scalable API platform",
+		tags: ["BACKEND", "API"],
 		image: "/projet1.avif",
 		gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)",
-		overview: "For this project, I designed an app that allows users to explore AI-generated art. My goal was to create an intuitive interface that makes discovering and interacting with AI art seamless and enjoyable. The design focuses on visual discovery, with a clean grid layout that showcases the artwork while maintaining easy navigation."
+		overview: "Nexus is a high-performance API platform I built to handle millions of requests per day. I architected the system using microservices, implemented rate limiting, caching strategies, and built comprehensive monitoring and logging. The platform supports REST and GraphQL APIs, with automatic scaling and load balancing to ensure reliability under high traffic."
 	},
 	genie: {
 		title: "Genie",
-		description: "Evolving the Genie app design language",
-		tags: ["UX DESIGN", "BRANDING"],
+		description: "Developing a microservices architecture",
+		tags: ["BACKEND", "DEVOPS"],
 		image: "/project2.avif",
 		gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
-		overview: "I worked on evolving the Genie app's design language to create a more cohesive and modern user experience. This involved redesigning key components, establishing a new visual hierarchy, and ensuring consistency across all screens. The new design language emphasizes clarity, accessibility, and a fresh aesthetic that aligns with the brand's vision."
+		overview: "I architected and implemented Genie's microservices infrastructure, breaking down a monolithic application into independent, scalable services. I set up containerization with Docker, orchestrated services using Kubernetes, and implemented service mesh for inter-service communication. The system includes CI/CD pipelines, automated testing, and comprehensive monitoring for each service."
 	},
 	flow: {
 		title: "Flow",

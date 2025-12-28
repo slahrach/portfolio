@@ -13,16 +13,16 @@ export default function Projects() {
 		{
 			slug: "nexus",
 			title: "Nexus",
-			description: "Designing the Nexus app",
-			tags: ["UX DESIGN", "RESEARCH"],
+			description: "Building a scalable API platform",
+			tags: ["BACKEND", "API"],
 			image: "/projet1.avif",
 			gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)"
 		},
 		{
 			slug: "genie",
 			title: "Genie",
-			description: "Evolving the Genie app design language",
-			tags: ["UX DESIGN", "BRANDING"],
+			description: "Developing a microservices architecture",
+			tags: ["BACKEND", "DEVOPS"],
 			image: "/project2.avif",
 			gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		},
