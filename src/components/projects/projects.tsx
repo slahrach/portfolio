@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function Projects() {
 	const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+	const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
 
 	const projects = [
 		{
@@ -55,14 +56,33 @@ export default function Projects() {
 		<section className="flex flex-col items-center w-full px-5 md:px-6 py-20 md:py-28 relative z-10">
 			<div className="w-full max-w-[1200px]">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-					{projects.map((project, index) => (
+					{projects.map((project, index) => {
+						const isHovered = hoveredProject === index;
+						const tiltX = mousePosition && isHovered ? (mousePosition.y - 0.5) * 10 : 0;
+						const tiltY = mousePosition && isHovered ? (mousePosition.x - 0.5) * -10 : 0;
+						
+						return (
 						<div
 							key={index}
 							onMouseEnter={() => setHoveredProject(index)}
-							onMouseLeave={() => setHoveredProject(null)}
+							onMouseLeave={() => {
+								setHoveredProject(null);
+								setMousePosition(null);
+							}}
+							onMouseMove={(e) => {
+								if (isHovered) {
+									const rect = e.currentTarget.getBoundingClientRect();
+									const x = (e.clientX - rect.left) / rect.width;
+									const y = (e.clientY - rect.top) / rect.height;
+									setMousePosition({ x, y });
+								}
+							}}
 							className="relative transition-all duration-300"
 							style={{
-								transform: hoveredProject === index ? "translateY(-4px)" : "translateY(0)",
+								transform: isHovered 
+									? `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-8px) scale(1.02)`
+									: "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)",
+								transformStyle: "preserve-3d",
 							}}
 						>
 							<div className="relative" style={cardStyle}>
@@ -118,7 +138,8 @@ export default function Projects() {
 								</div>
 							</div>
 						</div>
-					))}
+						);
+					})}
 				</div>
 			</div>
 		</section>
