@@ -63,19 +63,24 @@
 	* {
 		@apply border-border;
 	}
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
 		@apply text-foreground;
 		min-height: 100vh;
+		overflow-y: auto;
+		overflow-x: hidden;
 	}
 }
 
 /* Mesh gradient background */
 .mesh-gradient-bg {
 	position: relative;
-	overflow: hidden;
 	background-image: url("/bg.avif");
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 }
 
 /* Dark overlay to match Framer's muted look */

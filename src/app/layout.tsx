@@ -25,8 +25,8 @@ export default function RootLayout({
 		<html lang="en" className="dark">
 			<body className={cn(sora.className, "dark min-h-screen mesh-gradient-bg antialiased")}>
 				<div className="noise-overlay" />
-				{children}
-				<Analytics />
+						{children}
+						<Analytics />
 			</body>
 		</html>
 	);

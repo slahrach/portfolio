@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const HomeIcon = () => (
 	<svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -46,14 +47,30 @@ const MailIcon = () => (
 );
 
 export default function BottomNav() {
-	const [activeIndex, setActiveIndex] = useState(0);
+	const pathname = usePathname();
+	const router = useRouter();
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+	// Determine active index based on current pathname
+	const getActiveIndex = () => {
+		if (pathname === "/about") return 2; // About me
+		if (pathname === "/" || pathname.startsWith("/#")) return 0; // Home
+		return 0; // Default to home
+	};
+
+	const [activeIndex, setActiveIndex] = useState(getActiveIndex());
+
+	// Update active index when pathname changes
+	useEffect(() => {
+		setActiveIndex(getActiveIndex());
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [pathname]);
 
 	// Pages group with girly/pastel colors
 	const pageItems = [
 		{ Icon: HomeIcon, label: "Home", tooltip: null, href: "/", external: false, color: "#F9A8D4", shadow: "rgba(249, 168, 212, 0.4)", darkIcon: false }, // Soft pink
 		{ Icon: ProjectsIcon, label: "Projects", tooltip: null, href: "#projects", external: false, color: "#A78BFA", shadow: "rgba(167, 139, 250, 0.4)", darkIcon: false }, // Lavender
-		{ Icon: AboutIcon, label: "About me", tooltip: null, href: "#about", external: false, color: "#FFB58D", shadow: "rgba(255, 181, 141, 0.4)", darkIcon: false }, // Soft peach/coral orange
+		{ Icon: AboutIcon, label: "About me", tooltip: null, href: "/about", external: false, color: "#FFB58D", shadow: "rgba(255, 181, 141, 0.4)", darkIcon: false }, // Soft peach/coral orange
 	];
 
 	// Socials group with girly/pastel colors
@@ -69,6 +86,15 @@ export default function BottomNav() {
 			window.open(href, "_blank", "noopener,noreferrer");
 		} else if (href.startsWith("mailto:")) {
 			window.location.href = href;
+		} else if (href.startsWith("#")) {
+			// Smooth scroll to section
+			const element = document.querySelector(href);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth", block: "start" });
+			}
+		} else if (href.startsWith("/")) {
+			// Navigate to page using Next.js router
+			router.push(href);
 		}
 	};
 
