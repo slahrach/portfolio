@@ -5,7 +5,7 @@ import Footer from "@/components/footer/footer";
 
 export default function AboutPage() {
 	return (
-		<div className="mesh-gradient-bg flex flex-col w-full relative z-10">
+		<div className="black-bg flex flex-col w-full relative z-10 min-h-screen">
 			<span className="noise-overlay" />
 			<main className="flex flex-col items-center w-full pb-32 pt-12 md:pt-16">
 				<About />

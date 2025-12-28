@@ -71,7 +71,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 	};
 
 	return (
-		<div className="mesh-gradient-bg flex flex-col min-h-screen w-full relative z-10">
+		<div className="black-bg flex flex-col min-h-screen w-full relative z-10">
 			<span className="noise-overlay" />
 			
 			{/* Fixed top navigation bar with X button */}
