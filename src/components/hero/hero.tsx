@@ -28,7 +28,7 @@ export default function Hero() {
 			case "bottom-left":
 				return { x: -260, y: 140, rotate: -12 };
 			case "bottom-center":
-				return { x: 0, y: 200, rotate: 0 };
+				return { x: 0, y: 183, rotate: 0 };
 			case "bottom-right":
 				return { x: 260, y: 140, rotate: 12 };
 			default:
