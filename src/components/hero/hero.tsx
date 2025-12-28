@@ -2,18 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+	const router = useRouter();
 	const [isHovered, setIsHovered] = useState(false);
 	const baseText = "text-[28px] md:text-[34px] font-semibold tracking-[-0.02em]";
 
-	// All using projet1.avif as requested
+	// All using projet1.avif as requested, mapped to project slugs
 	const projects = [
-		{ src: "/projet1.avif", position: "top-left" },
-		{ src: "/projet1.avif", position: "top-right" },
-		{ src: "/projet1.avif", position: "bottom-left" },
-		{ src: "/projet1.avif", position: "bottom-center" },
-		{ src: "/projet1.avif", position: "bottom-right" }
+		{ src: "/projet1.avif", position: "top-left", slug: "nexus" },
+		{ src: "/projet1.avif", position: "top-right", slug: "genie" },
+		{ src: "/projet1.avif", position: "bottom-left", slug: "flow" },
+		{ src: "/projet1.avif", position: "bottom-center", slug: "aurora" },
+		{ src: "/projet1.avif", position: "bottom-right", slug: "nexus" }
 	];
 
 	// Final spread positions when hovered - much more spread out
@@ -55,7 +57,7 @@ export default function Hero() {
 					return (
 						<div
 							key={index}
-							className="absolute pointer-events-none"
+							className="absolute"
 							style={{
 								zIndex: isHovered ? index : 5 - index,
 								transform: isHovered 
@@ -63,10 +65,17 @@ export default function Hero() {
 									: `translate(0px, 0px) rotate(0deg) scale(0.9)`,
 								opacity: isHovered ? 1 : 0,
 								transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s`,
+								pointerEvents: isHovered ? "auto" : "none",
+								cursor: isHovered ? "pointer" : "default",
+							}}
+							onClick={() => {
+								if (isHovered) {
+									router.push(`/projects/${project.slug}`);
+								}
 							}}
 						>
 							<div 
-								className="rounded-[16px] overflow-hidden"
+								className="rounded-[16px] overflow-hidden transition-all duration-200 hover:scale-105"
 								style={{
 									width: "200px",
 									height: "150px",
