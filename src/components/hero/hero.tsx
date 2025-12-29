@@ -1,14 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function Hero() {
 	const router = useRouter();
 	const [isHovered, setIsHovered] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 	const baseText =
 		"text-[28px] md:text-[34px] font-semibold tracking-[-0.02em]";
+
+	// Check if device is mobile
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
 
 	// Using the 5 project PNG images
 	const projects = [
@@ -46,56 +57,57 @@ export default function Hero() {
 		<section className="flex flex-col items-center justify-center w-full px-5 md:px-6 py-10 md:py-14 relative z-10 overflow-visible">
 			<div
 				className="relative flex justify-center items-center"
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
+				onMouseEnter={() => !isMobile && setIsHovered(true)}
+				onMouseLeave={() => !isMobile && setIsHovered(false)}
 				style={{ width: "fit-content" }}
 			>
-				{/* Project mockups - stacked in center, fan out on hover */}
-				{projects.map((project, index) => {
-					const spread = getSpreadPosition(project.position);
-					const delay = getDelay();
+				{/* Project mockups - stacked in center, fan out on hover (desktop only) */}
+				{!isMobile &&
+					projects.map((project, index) => {
+						const spread = getSpreadPosition(project.position);
+						const delay = getDelay();
 
-					return (
-						<div
-							key={index}
-							className="absolute"
-							style={{
-								zIndex: isHovered ? index : 5 - index,
-								transform: isHovered
-									? `translate(${spread.x}px, ${spread.y}px) rotate(${spread.rotate}deg) scale(1)`
-									: "translate(0px, 0px) rotate(0deg) scale(0.9)",
-								opacity: isHovered ? 1 : 0,
-								transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s`,
-								pointerEvents: isHovered ? "auto" : "none",
-								cursor: isHovered ? "pointer" : "default"
-							}}
-							onClick={() => {
-								if (isHovered) {
-									router.push(`/projects/${project.slug}`);
-								}
-							}}
-						>
+						return (
 							<div
-								className="rounded-[16px] overflow-hidden transition-all duration-200 hover:scale-105"
+								key={index}
+								className="absolute hidden md:block"
 								style={{
-									width: "200px",
-									height: "150px",
-									boxShadow: isHovered
-										? "0 25px 50px rgba(0, 0, 0, 0.35)"
-										: "0 10px 30px rgba(0, 0, 0, 0.2)"
+									zIndex: isHovered ? index : 5 - index,
+									transform: isHovered
+										? `translate(${spread.x}px, ${spread.y}px) rotate(${spread.rotate}deg) scale(1)`
+										: "translate(0px, 0px) rotate(0deg) scale(0.9)",
+									opacity: isHovered ? 1 : 0,
+									transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s`,
+									pointerEvents: isHovered ? "auto" : "none",
+									cursor: isHovered ? "pointer" : "default"
+								}}
+								onClick={() => {
+									if (isHovered) {
+										router.push(`/projects/${project.slug}`);
+									}
 								}}
 							>
-								<Image
-									src={project.src}
-									alt={`Project ${index + 1}`}
-									width={200}
-									height={150}
-									className="w-full h-full object-cover"
-								/>
+								<div
+									className="rounded-[16px] overflow-hidden transition-all duration-200 hover:scale-105"
+									style={{
+										width: "200px",
+										height: "150px",
+										boxShadow: isHovered
+											? "0 25px 50px rgba(0, 0, 0, 0.35)"
+											: "0 10px 30px rgba(0, 0, 0, 0.2)"
+									}}
+								>
+									<Image
+										src={project.src}
+										alt={`Project ${index + 1}`}
+										width={200}
+										height={150}
+										className="w-full h-full object-cover"
+									/>
+								</div>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
 
 				<div
 					className="absolute inset-0 rounded-[40px] blur-[44px] pointer-events-none"
@@ -185,6 +197,33 @@ export default function Hero() {
 					</div>
 				</div>
 			</div>
+
+			{/* Mobile: Show project cards in a grid below the main card */}
+			{isMobile && (
+				<div className="mt-8 w-full max-w-[600px]">
+					<div className="grid grid-cols-2 gap-3 md:hidden">
+						{projects.map((project, index) => (
+							<button
+								key={index}
+								onClick={() => router.push(`/projects/${project.slug}`)}
+								className="relative rounded-[12px] overflow-hidden transition-transform duration-200 active:scale-95"
+								style={{
+									aspectRatio: "4/3",
+									boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)"
+								}}
+							>
+								<Image
+									src={project.src}
+									alt={`Project ${index + 1}`}
+									fill
+									className="object-cover"
+									sizes="(max-width: 768px) 50vw, 200px"
+								/>
+							</button>
+						))}
+					</div>
+				</div>
+			)}
 		</section>
 	);
 }
