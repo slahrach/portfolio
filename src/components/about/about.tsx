@@ -43,6 +43,12 @@ export default function About() {
 		{ name: "Bull", color: "#6EE7B7" },
 		{ name: "Playwright", color: "#A78BFA" },
 		{ name: "Web3", color: "#7DD3FC" },
+		{ name: "Next.js", color: "#F9A8D4" },
+		{ name: "React", color: "#6EE7B7" },
+		{ name: "Tailwind CSS", color: "#A78BFA" },
+		{ name: "shadcn/ui", color: "#7DD3FC" },
+		{ name: "Framer Motion", color: "#5EEAD4" },
+		{ name: "Radix UI", color: "#FFF389" },
 	];
 
 	const cardStyle = {
