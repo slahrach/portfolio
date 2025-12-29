@@ -27,14 +27,22 @@ export default function About() {
 	];
 
 	const skills = [
-		{ name: "Next.js", color: "#F9A8D4" },
-		{ name: "React", color: "#7DD3FC" },
 		{ name: "NestJS", color: "#6EE7B7" },
 		{ name: "TypeScript", color: "#A78BFA" },
-		{ name: "Node.js", color: "#FFF389" },
-		{ name: "Docker", color: "#5EEAD4" },
-		{ name: "DevOps", color: "#FFB58D" },
-		{ name: "AI", color: "#F9A8D4" },
+		{ name: "PostgreSQL", color: "#7DD3FC" },
+		{ name: "TypeORM", color: "#5EEAD4" },
+		{ name: "Prisma", color: "#FFF389" },
+		{ name: "Redis", color: "#FFB58D" },
+		{ name: "Socket.IO", color: "#F9A8D4" },
+		{ name: "REST APIs", color: "#6EE7B7" },
+		{ name: "WebSockets", color: "#A78BFA" },
+		{ name: "Docker", color: "#7DD3FC" },
+		{ name: "AWS", color: "#5EEAD4" },
+		{ name: "GitHub Actions", color: "#FFF389" },
+		{ name: "OpenAI API", color: "#F9A8D4" },
+		{ name: "Bull", color: "#6EE7B7" },
+		{ name: "Playwright", color: "#A78BFA" },
+		{ name: "Web3", color: "#7DD3FC" },
 	];
 
 	const cardStyle = {
