@@ -25,7 +25,6 @@ const projects = {
 			"Docker",
 			"Docker Compose",
 			"GitHub Actions",
-			"Multi-environment deployments",
 			"DigitalOcean",
 			"AWS (EKS, ALB)",
 			"Ethers.js",
