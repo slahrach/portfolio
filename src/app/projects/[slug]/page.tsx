@@ -74,18 +74,33 @@ const projects = {
 			"NestJS",
 			"Prisma",
 			"PostgreSQL",
-			"OpenAI API (document generation)",
+			"OpenAI API",
 			"Authentication & role-based access"
 		],
 		overview: "I built a full-stack web application for The Art of Franchising that automates the creation of franchise operations manuals. The platform replaces a manual, time-consuming process with a guided, AI-powered system that generates professional documents in minutes.\n\nThe application guides clients through a multi-step wizard covering 16 structured sections, with real-time auto-save, save-and-resume functionality, and optional voice input for accessibility. An admin dashboard allows reviewers to manage submissions and generate branded DOCX/PDF manuals with a single click.\n\nI worked across the entire stack, building the frontend with Next.js, developing the backend API with NestJS, and designing the database layer using Prisma. I integrated OpenAI to power intelligent document generation, mapping structured user input into well-formatted operational manuals. I also handled authentication, data persistence, and production deployment.\n\nThe solution is live and significantly reduced manual work, improved document consistency, and enabled the client to scale their operations more efficiently."
 	},
 	"project-4": {
-		title: "Project 4",
-		description: "Creating an AI-powered analytics dashboard",
-		tags: ["BACKEND", "AI"],
-		image: "/project.4.png",
+		title: "Medan Orthodontics – AI Chatbot Solution",
+		description: "AI-Powered Patient Support (Web Widget & WhatsApp)",
+		tags: ["FULL-STACK", "AI"],
+		images: ["/project.4.1.png", "/project.4.2.png"],
 		gradient: "linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)",
-		overview: "Aurora is an AI-powered analytics dashboard that provides real-time insights and predictive analytics. I developed the backend infrastructure, integrated machine learning models, and built APIs that process large datasets efficiently. The system uses advanced algorithms to generate actionable insights while maintaining fast response times and data accuracy."
+		role: "Full-Stack Developer",
+		technologies: [
+			"NestJS",
+			"Next.js",
+			"React",
+			"TypeScript",
+			"PostgreSQL",
+			"OpenAI (GPT-4)",
+			"Meta WhatsApp Cloud API",
+			"Nodemailer",
+			"Docker",
+			"REST APIs",
+			"Webhooks",
+			"Tailwind CSS"
+		],
+		overview: "Built a production-ready conversational AI solution for a French orthodontics clinic, providing 24/7 patient support through two channels: an embeddable web chatbot widget and WhatsApp Business integration.\n\nThe chatbot handles patient inquiries using intelligent intent detection, routing conversations into dedicated flows for new patients, appointments, emergencies, and FAQs. It supports automatic French/English language detection, collects structured patient information, and sends summaries directly to the clinic via email to reduce administrative workload.\n\nI implemented the system end to end, building the backend with NestJS and PostgreSQL, integrating OpenAI for natural language understanding, and connecting Meta WhatsApp Cloud API for real-time messaging. The frontend includes a lightweight, embeddable chat widget that can be added to any website using a single script tag."
 	},
 	"project-5": {
 		title: "Project 5",

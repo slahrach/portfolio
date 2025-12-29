@@ -36,9 +36,9 @@ export default function Projects() {
 		},
 		{
 			slug: "project-4",
-			title: "Project 4",
-			description: "Creating an AI-powered analytics dashboard",
-			tags: ["BACKEND", "AI"],
+			title: "Medan Orthodontics – AI Chatbot Solution",
+			description: "AI-Powered Patient Support (Web Widget & WhatsApp)",
+			tags: ["FULL-STACK", "AI"],
 			image: "/project.4.png",
 			gradient: "linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)"
 		},
