@@ -197,33 +197,6 @@ export default function Hero() {
 					</div>
 				</div>
 			</div>
-
-			{/* Mobile: Show project cards in a grid below the main card */}
-			{isMobile && (
-				<div className="mt-8 w-full max-w-[600px]">
-					<div className="grid grid-cols-2 gap-3 md:hidden">
-						{projects.map((project, index) => (
-							<button
-								key={index}
-								onClick={() => router.push(`/projects/${project.slug}`)}
-								className="relative rounded-[12px] overflow-hidden transition-transform duration-200 active:scale-95"
-								style={{
-									aspectRatio: "4/3",
-									boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)"
-								}}
-							>
-								<Image
-									src={project.src}
-									alt={`Project ${index + 1}`}
-									fill
-									className="object-cover"
-									sizes="(max-width: 768px) 50vw, 200px"
-								/>
-							</button>
-						))}
-					</div>
-				</div>
-			)}
 		</section>
 	);
 }
