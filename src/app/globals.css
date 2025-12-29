@@ -79,7 +79,7 @@
 /* Mesh gradient background */
 .mesh-gradient-bg {
 	position: relative;
-	background-image: url("/bg.avif");
+	background-image: url("/portfolio/bg.avif");
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
