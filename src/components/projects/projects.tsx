@@ -12,9 +12,9 @@ export default function Projects() {
 	const projects = [
 		{
 			slug: "project-1",
-			title: "Project 1",
-			description: "Building a scalable API platform",
-			tags: ["BACKEND", "API"],
+			title: "TNTX.ai",
+			description: "Web3 Social Trading & Token Interaction Platform",
+			tags: ["BACKEND", "DEVOPS", "WEB3"],
 			image: "/project.1.png",
 			gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)"
 		},
@@ -47,7 +47,7 @@ export default function Projects() {
 			title: "Project 5",
 			description: "Designing a real-time collaboration system",
 			tags: ["FULL-STACK", "REALTIME"],
-			image: "/project.5..png",
+			image: "/project.5.png",
 			gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		}
 	];

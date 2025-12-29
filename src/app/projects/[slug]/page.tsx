@@ -7,12 +7,34 @@ import Footer from "@/components/footer/footer";
 
 const projects = {
 	"project-1": {
-		title: "Project 1",
-		description: "Building a scalable API platform",
-		tags: ["BACKEND", "API"],
+		title: "TNTX.ai",
+		description: "Web3 Social Trading & Token Interaction Platform",
+		tags: ["BACKEND", "DEVOPS", "WEB3"],
 		image: "/project.1.png",
+		video: "/tntx.mp4",
 		gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)",
-		overview: "Nexus is a high-performance API platform I built to handle millions of requests per day. I architected the system using microservices, implemented rate limiting, caching strategies, and built comprehensive monitoring and logging. The platform supports REST and GraphQL APIs, with automatic scaling and load balancing to ensure reliability under high traffic."
+		role: "Backend and DevOps Engineer",
+		technologies: [
+			"NestJS",
+			"TypeScript",
+			"PostgreSQL",
+			"TypeORM",
+			"Redis",
+			"Socket.IO",
+			"Bull",
+			"Docker",
+			"Docker Compose",
+			"GitHub Actions",
+			"Multi-environment deployments",
+			"DigitalOcean",
+			"AWS (EKS, ALB)",
+			"Ethers.js",
+			"Solana Web3.js",
+			"SIWE",
+			"1inch",
+			"Jupiter"
+		],
+		overview: "The founder initially had a prototype MVP to validate the concept of a social crypto-trading platform. I joined to rebuild and evolve the product step by step, turning the prototype into a scalable, production-ready system capable of supporting real users and real-time interactions.\n\nI was responsible for the entire backend, from architecture and API design to infrastructure and deployments. This included building real-time chat and notifications, multi-chain blockchain integrations (EVM & Solana), staking and trading integrations, background job processing, caching, and a scalable WebSocket infrastructure. I also designed and maintained the CI/CD pipelines, Dockerized environments, and production deployments, ensuring stability as usage increased.\n\nAs the platform matured technically and functionally, the improved performance, reliability, and feature depth played a key role in helping the founder raise significant funding. TNTX.ai is now live in beta, with users actively testing the platform and ongoing development continuing as the product scales."
 	},
 	"project-2": {
 		title: "Project 2",
@@ -42,7 +64,7 @@ const projects = {
 		title: "Project 5",
 		description: "Designing a real-time collaboration system",
 		tags: ["FULL-STACK", "REALTIME"],
-		image: "/project.5..png",
+		image: "/project.5.png",
 		gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
 		overview: "I built a real-time collaboration system that enables teams to work together seamlessly. The platform features WebSocket connections for instant updates, conflict resolution algorithms, and a robust backend that handles concurrent editing. I implemented efficient data synchronization, user presence indicators, and a scalable architecture that supports thousands of simultaneous users."
 	}
@@ -110,7 +132,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 			<main className="flex-1 flex flex-col items-center w-full pb-32 pt-20 md:pt-24">
 				<div className="w-full max-w-[900px] px-5 md:px-6">
 
-					{/* Project images */}
+					{/* Project video/image */}
 					<div className="relative mb-8" style={cardStyle}>
 						<div
 							className="absolute inset-0 rounded-[40px] blur-[44px] pointer-events-none -z-10"
@@ -126,13 +148,25 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 								background: project.gradient,
 							}}
 						>
-							<Image
-								src={project.image}
-								alt={project.title}
-								fill
-								className="object-cover"
-								sizes="100vw"
-							/>
+							{"video" in project && project.video ? (
+								<video
+									src={project.video}
+									controls
+									className="w-full h-full object-cover"
+									playsInline
+									preload="metadata"
+								>
+									Your browser does not support the video tag.
+								</video>
+							) : (
+								<Image
+									src={project.image}
+									alt={project.title}
+									fill
+									className="object-cover"
+									sizes="100vw"
+								/>
+							)}
 						</div>
 					</div>
 
@@ -150,9 +184,15 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 						/>
 
 						<div className="p-8 md:p-10">
-							<h1 className="text-white text-3xl md:text-4xl font-semibold mb-4 tracking-[-0.02em]">
+							<h1 className="text-white text-3xl md:text-4xl font-semibold mb-2 tracking-[-0.02em]">
 								{project.title}
 							</h1>
+							
+							{"role" in project && project.role && (
+								<p className="text-white/60 text-base md:text-lg mb-6">
+									Role: <span className="text-white/80">{project.role}</span>
+								</p>
+							)}
 							
 							<div className="flex flex-wrap gap-2 mb-6">
 								{project.tags.map((tag, tagIndex) => (
@@ -174,10 +214,33 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 								<h2 className="text-white text-xl md:text-2xl font-medium mb-4 tracking-[-0.02em]">
 									Overview
 								</h2>
-								<p className="text-white/75 text-base md:text-lg leading-[1.7]">
+								<div className="text-white/75 text-base md:text-lg leading-[1.7] whitespace-pre-line">
 									{project.overview}
-								</p>
+								</div>
 							</div>
+
+							{"technologies" in project && project.technologies && project.technologies.length > 0 && (
+								<div className="mb-6">
+									<h2 className="text-white text-xl md:text-2xl font-medium mb-4 tracking-[-0.02em]">
+										Technologies
+									</h2>
+									<div className="flex flex-wrap gap-2.5">
+										{project.technologies.map((tech, techIndex) => (
+											<span
+												key={techIndex}
+												className="px-4 py-2 rounded-lg text-sm font-medium"
+												style={{
+													background: "rgba(255, 255, 255, 0.1)",
+													color: "rgba(255, 255, 255, 0.9)",
+													border: "1px solid rgba(255, 255, 255, 0.15)"
+												}}
+											>
+												{tech}
+											</span>
+										))}
+									</div>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
