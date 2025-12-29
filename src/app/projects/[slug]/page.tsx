@@ -5,14 +5,15 @@ import { useState } from "react";
 import Image from "next/image";
 import BottomNav from "@/components/bottom-nav/bottom-nav";
 import Footer from "@/components/footer/footer";
+import { getAssetPath } from "@/lib/assets";
 
 const projects = {
 	"project-1": {
 		title: "TNTX.ai",
 		description: "Web3 Social Trading & Token Interaction Platform",
 		tags: ["BACKEND", "DEVOPS", "WEB3"],
-		image: "/project.1.png",
-		video: "/tntx.mp4",
+		image: getAssetPath("/project.1.png"),
+		video: getAssetPath("/tntx.mp4"),
 		gradient:
 			"linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)",
 		role: "Backend and DevOps Engineer",
@@ -42,12 +43,12 @@ const projects = {
 		title: "Mi Lalla's Touch",
 		description: "Luxury E-commerce Platform for Moroccan Fashion",
 		tags: ["FULL-STACK", "E-COMMERCE"],
-		image: "/project.2.1.png",
+		image: getAssetPath("/project.2.1.png"),
 		images: [
-			"/project.2.1.png",
-			"/project.2.2.png",
-			"/project.2.3.png",
-			"/project.2.4.png"
+			getAssetPath("/project.2.1.png"),
+			getAssetPath("/project.2.2.png"),
+			getAssetPath("/project.2.3.png"),
+			getAssetPath("/project.2.4.png")
 		],
 		gradient:
 			"linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
@@ -72,10 +73,10 @@ const projects = {
 		description: "AI-Powered Document Automation Platform",
 		tags: ["FULL-STACK", "AI"],
 		images: [
-			"/project.3.1.png",
-			"/project.3.2.png",
-			"/project.3.3.png",
-			"/project.3.4.png"
+			getAssetPath("/project.3.1.png"),
+			getAssetPath("/project.3.2.png"),
+			getAssetPath("/project.3.3.png"),
+			getAssetPath("/project.3.4.png")
 		],
 		gradient:
 			"linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)",
@@ -99,7 +100,10 @@ const projects = {
 		title: "Medan Orthodontics – AI Chatbot Solution",
 		description: "AI-Powered Patient Support (Web Widget & WhatsApp)",
 		tags: ["FULL-STACK", "AI"],
-		images: ["/project.4.1.png", "/project.4.2.png"],
+		images: [
+			getAssetPath("/project.4.1.png"),
+			getAssetPath("/project.4.2.png")
+		],
 		gradient:
 			"linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)",
 		role: "Full-Stack Developer",
@@ -124,8 +128,8 @@ const projects = {
 		title: "Meta Monetization Manager",
 		description: "Facebook Monetization Tracking & Automation Platform",
 		tags: ["FULL-STACK", "AUTOMATION"],
-		image: "/project.5.png",
-		video: "/project.5.mp4",
+		image: getAssetPath("/project.5.png"),
+		video: getAssetPath("/project.5.mp4"),
 		gradient:
 			"linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
 		role: "Full-Stack Developer",

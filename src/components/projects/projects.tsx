@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { getAssetPath } from "@/lib/assets";
 
 export default function Projects() {
 	const router = useRouter();
@@ -18,7 +19,7 @@ export default function Projects() {
 			title: "TNTX.ai",
 			description: "Web3 Social Trading & Token Interaction Platform",
 			tags: ["BACKEND", "DEVOPS", "WEB3"],
-			image: "/project.1.png",
+			image: getAssetPath("/project.1.png"),
 			gradient:
 				"linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)"
 		},
@@ -27,7 +28,7 @@ export default function Projects() {
 			title: "Mi Lalla's Touch",
 			description: "Luxury E-commerce Platform for Moroccan Fashion",
 			tags: ["FULL-STACK", "E-COMMERCE"],
-			image: "/project.2.png",
+			image: getAssetPath("/project.2.png"),
 			gradient:
 				"linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		},
@@ -36,7 +37,7 @@ export default function Projects() {
 			title: "Franchise Operations Manual Generator",
 			description: "AI-Powered Document Automation Platform",
 			tags: ["FULL-STACK", "AI"],
-			image: "/project.3.png",
+			image: getAssetPath("/project.3.png"),
 			gradient:
 				"linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)"
 		},
@@ -45,7 +46,7 @@ export default function Projects() {
 			title: "Medan Orthodontics – AI Chatbot Solution",
 			description: "AI-Powered Patient Support (Web Widget & WhatsApp)",
 			tags: ["FULL-STACK", "AI"],
-			image: "/project.4.png",
+			image: getAssetPath("/project.4.png"),
 			gradient:
 				"linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)"
 		},
@@ -54,7 +55,7 @@ export default function Projects() {
 			title: "Meta Monetization Manager",
 			description: "Facebook Monetization Tracking & Automation Platform",
 			tags: ["FULL-STACK", "AUTOMATION", "AI"],
-			image: "/project.5.png",
+			image: getAssetPath("/project.5.png"),
 			gradient:
 				"linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		}
