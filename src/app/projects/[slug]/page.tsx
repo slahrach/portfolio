@@ -107,6 +107,7 @@ const projects = {
 		description: "Facebook Monetization Tracking & Automation Platform",
 		tags: ["FULL-STACK", "AUTOMATION"],
 		image: "/project.5.png",
+		video: "/project.4.mp4",
 		gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
 		role: "Full-Stack Developer",
 		technologies: [
