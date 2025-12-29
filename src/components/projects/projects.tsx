@@ -23,7 +23,7 @@ export default function Projects() {
 			title: "Mi Lalla's Touch",
 			description: "Luxury E-commerce Platform for Moroccan Fashion",
 			tags: ["FULL-STACK", "E-COMMERCE"],
-			image: "/project.2.1.png",
+			image: "/project.2.png",
 			gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		},
 		{
