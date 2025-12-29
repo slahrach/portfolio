@@ -44,9 +44,9 @@ export default function Projects() {
 		},
 		{
 			slug: "project-5",
-			title: "Project 5",
-			description: "Designing a real-time collaboration system",
-			tags: ["FULL-STACK", "REALTIME"],
+			title: "Meta Monetization Manager",
+			description: "Facebook Monetization Tracking & Automation Platform",
+			tags: ["FULL-STACK", "AUTOMATION", "AI"],
 			image: "/project.5.png",
 			gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		}

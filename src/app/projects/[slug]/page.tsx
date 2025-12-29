@@ -103,12 +103,28 @@ const projects = {
 		overview: "Built a production-ready conversational AI solution for a French orthodontics clinic, providing 24/7 patient support through two channels: an embeddable web chatbot widget and WhatsApp Business integration.\n\nThe chatbot handles patient inquiries using intelligent intent detection, routing conversations into dedicated flows for new patients, appointments, emergencies, and FAQs. It supports automatic French/English language detection, collects structured patient information, and sends summaries directly to the clinic via email to reduce administrative workload.\n\nI implemented the system end to end, building the backend with NestJS and PostgreSQL, integrating OpenAI for natural language understanding, and connecting Meta WhatsApp Cloud API for real-time messaging. The frontend includes a lightweight, embeddable chat widget that can be added to any website using a single script tag."
 	},
 	"project-5": {
-		title: "Project 5",
-		description: "Designing a real-time collaboration system",
-		tags: ["FULL-STACK", "REALTIME"],
+		title: "Meta Monetization Manager",
+		description: "Facebook Monetization Tracking & Automation Platform",
+		tags: ["FULL-STACK", "AUTOMATION"],
 		image: "/project.5.png",
 		gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
-		overview: "I built a real-time collaboration system that enables teams to work together seamlessly. The platform features WebSocket connections for instant updates, conflict resolution algorithms, and a robust backend that handles concurrent editing. I implemented efficient data synchronization, user presence indicators, and a scalable architecture that supports thousands of simultaneous users."
+		role: "Full-Stack Developer",
+		technologies: [
+			"Next.js",
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"PostgreSQL",
+			"Prisma",
+			"Socket.IO",
+			"NextAuth (Facebook OAuth)",
+			"Playwright (browser automation)",
+			"Cheerio",
+			"Meta Graph API",
+			"OpenAI (Data Extraction)",
+			"Encrypted Credential Storage (AES-256-GCM)"
+		],
+		overview: "Built a full-stack web application that allows Facebook Page creators, managers, and agencies to monitor monetization tools across multiple Pages from a single dashboard.\n\nThe platform addresses a key limitation of the Facebook ecosystem: many monetization details (Stars, Subscriptions, In-Stream Ads, Brand Collabs, payout status, eligibility states) are not fully accessible via public APIs. To solve this, I combined a modern web dashboard with a secure browser automation system that synchronizes monetization data in real time.\n\nI developed the web application using Next.js (App Router), TypeScript, and PostgreSQL with Prisma. Authentication is handled through Facebook OAuth. For data not available through the Graph API, I built a Playwright-based automation bot that logs into Facebook, navigates monetization dashboards, and extracts structured data.\n\nA key challenge was handling Facebook security checks. I implemented an interactive verification system where the bot pauses when 2FA or security checkpoints appear, sends a screenshot to the dashboard, and waits for the user to enter verification codes (SMS, authenticator app, WhatsApp, etc.) in real time via WebSockets before continuing the flow.\n\nThe system provides live sync progress, per-page monetization status, payout visibility, and verification handling, significantly reducing manual effort when managing multiple Pages."
 	}
 };
 
