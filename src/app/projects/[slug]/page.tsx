@@ -59,12 +59,25 @@ const projects = {
 		overview: "Mi Lalla's Touch is a modern e-commerce platform built for a luxury Moroccan fashion brand, focused on handcrafted pieces and premium brand presentation. I worked on the full stack, delivering a complete shopping experience with strong performance, SEO, and a polished, minimalist design.\n\nI implemented the frontend using Next.js (App Router) and TypeScript, building a mobile-first, responsive UI with smooth animations and accessible components. On the backend, I used Supabase for authentication, data management, and serverless logic, enabling secure user accounts, order handling, and scalable APIs.\n\nThe platform supports the full e-commerce flow—from product discovery to checkout—while maintaining fast load times and a clean user experience. Special care was taken to optimize server-side rendering, handle client/server state correctly, and ensure the site performs well on mobile devices."
 	},
 	"project-3": {
-		title: "Project 3",
-		description: "Building a seamless workflow platform",
-		tags: ["FULL-STACK", "DEVOPS"],
-		image: "/project.3.png",
+		title: "Franchise Operations Manual Generator",
+		description: "AI-Powered Document Automation Platform",
+		tags: ["FULL-STACK", "AI"],
+		images: ["/project.3.1.png", "/project.3.2.png", "/project.3.3.png", "/project.3.4.png"],
 		gradient: "linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)",
-		overview: "Flow is a comprehensive workflow platform designed to streamline team collaboration and project management. I built the entire system from the ground up, focusing on backend architecture, API design, and scalable infrastructure. The platform handles real-time updates, file management, and complex workflow automation while maintaining high performance and reliability."
+		role: "Full-Stack Developer",
+		technologies: [
+			"Next.js",
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"shadcn/ui",
+			"NestJS",
+			"Prisma",
+			"PostgreSQL",
+			"OpenAI API (document generation)",
+			"Authentication & role-based access"
+		],
+		overview: "I built a full-stack web application for The Art of Franchising that automates the creation of franchise operations manuals. The platform replaces a manual, time-consuming process with a guided, AI-powered system that generates professional documents in minutes.\n\nThe application guides clients through a multi-step wizard covering 16 structured sections, with real-time auto-save, save-and-resume functionality, and optional voice input for accessibility. An admin dashboard allows reviewers to manage submissions and generate branded DOCX/PDF manuals with a single click.\n\nI worked across the entire stack, building the frontend with Next.js, developing the backend API with NestJS, and designing the database layer using Prisma. I integrated OpenAI to power intelligent document generation, mapping structured user input into well-formatted operational manuals. I also handled authentication, data persistence, and production deployment.\n\nThe solution is live and significantly reduced manual work, improved document consistency, and enabled the client to scale their operations more efficiently."
 	},
 	"project-4": {
 		title: "Project 4",

@@ -28,9 +28,9 @@ export default function Projects() {
 		},
 		{
 			slug: "project-3",
-			title: "Project 3",
-			description: "Building a seamless workflow platform",
-			tags: ["FULL-STACK", "DEVOPS"],
+			title: "Franchise Operations Manual Generator",
+			description: "AI-Powered Document Automation Platform",
+			tags: ["FULL-STACK", "AI"],
 			image: "/project.3.png",
 			gradient: "linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)"
 		},
