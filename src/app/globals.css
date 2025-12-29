@@ -87,7 +87,7 @@
 
 /* Dark overlay to match Framer's muted look */
 .mesh-gradient-bg::before {
-	content: '';
+	content: "";
 	position: absolute;
 	inset: 0;
 	background: rgba(0, 0, 0, 0.65);
@@ -96,10 +96,14 @@
 
 /* Vignette overlay */
 .mesh-gradient-bg::after {
-	content: '';
+	content: "";
 	position: absolute;
 	inset: 0;
-	background: radial-gradient(ellipse 80% 70% at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+	background: radial-gradient(
+		ellipse 80% 70% at 50% 50%,
+		transparent 0%,
+		rgba(0, 0, 0, 0.5) 100%
+	);
 	pointer-events: none;
 }
 

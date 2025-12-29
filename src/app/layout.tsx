@@ -13,7 +13,8 @@ const sora = Sora({
 
 export const metadata: Metadata = {
 	title: "Sara Lahrach | Software Engineer",
-	description: "Software Engineer at Better Call Tech. Building end-to-end solutions, scalable infrastructures, and AI-powered systems. Previously at Lendstack and freelance on Fiverr."
+	description:
+		"Software Engineer at Better Call Tech. Building end-to-end solutions, scalable infrastructures, and AI-powered systems. Previously at Lendstack and freelance on Fiverr."
 };
 
 export default function RootLayout({
@@ -23,10 +24,15 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="dark">
-			<body className={cn(sora.className, "dark min-h-screen mesh-gradient-bg antialiased")}>
+			<body
+				className={cn(
+					sora.className,
+					"dark min-h-screen mesh-gradient-bg antialiased"
+				)}
+			>
 				<div className="noise-overlay" />
-						{children}
-						<Analytics />
+				{children}
+				<Analytics />
 			</body>
 		</html>
 	);

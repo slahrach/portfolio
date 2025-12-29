@@ -13,7 +13,8 @@ const projects = {
 		tags: ["BACKEND", "DEVOPS", "WEB3"],
 		image: "/project.1.png",
 		video: "/tntx.mp4",
-		gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)",
+		gradient:
+			"linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)",
 		role: "Backend and DevOps Engineer",
 		technologies: [
 			"NestJS",
@@ -34,15 +35,22 @@ const projects = {
 			"1inch",
 			"Jupiter"
 		],
-		overview: "The founder initially had a prototype MVP to validate the concept of a social crypto-trading platform. I joined to rebuild and evolve the product step by step, turning the prototype into a scalable, production-ready system capable of supporting real users and real-time interactions.\n\nI was responsible for the entire backend, from architecture and API design to infrastructure and deployments. This included building real-time chat and notifications, multi-chain blockchain integrations (EVM & Solana), staking and trading integrations, background job processing, caching, and a scalable WebSocket infrastructure. I also designed and maintained the CI/CD pipelines, Dockerized environments, and production deployments, ensuring stability as usage increased.\n\nAs the platform matured technically and functionally, the improved performance, reliability, and feature depth played a key role in helping the founder raise significant funding. TNTX.ai is now live in beta, with users actively testing the platform and ongoing development continuing as the product scales."
+		overview:
+			"The founder initially had a prototype MVP to validate the concept of a social crypto-trading platform. I joined to rebuild and evolve the product step by step, turning the prototype into a scalable, production-ready system capable of supporting real users and real-time interactions.\n\nI was responsible for the entire backend, from architecture and API design to infrastructure and deployments. This included building real-time chat and notifications, multi-chain blockchain integrations (EVM & Solana), staking and trading integrations, background job processing, caching, and a scalable WebSocket infrastructure. I also designed and maintained the CI/CD pipelines, Dockerized environments, and production deployments, ensuring stability as usage increased.\n\nAs the platform matured technically and functionally, the improved performance, reliability, and feature depth played a key role in helping the founder raise significant funding. TNTX.ai is now live in beta, with users actively testing the platform and ongoing development continuing as the product scales."
 	},
 	"project-2": {
 		title: "Mi Lalla's Touch",
 		description: "Luxury E-commerce Platform for Moroccan Fashion",
 		tags: ["FULL-STACK", "E-COMMERCE"],
 		image: "/project.2.1.png",
-		images: ["/project.2.1.png", "/project.2.2.png", "/project.2.3.png", "/project.2.4.png"],
-		gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
+		images: [
+			"/project.2.1.png",
+			"/project.2.2.png",
+			"/project.2.3.png",
+			"/project.2.4.png"
+		],
+		gradient:
+			"linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
 		role: "Full-Stack Developer",
 		technologies: [
 			"Next.js 15 (App Router)",
@@ -56,14 +64,21 @@ const projects = {
 			"Server-Side Rendering",
 			"Responsive & Accessible Design"
 		],
-		overview: "Mi Lalla's Touch is a modern e-commerce platform built for a luxury Moroccan fashion brand, focused on handcrafted pieces and premium brand presentation. I worked on the full stack, delivering a complete shopping experience with strong performance, SEO, and a polished, minimalist design.\n\nI implemented the frontend using Next.js (App Router) and TypeScript, building a mobile-first, responsive UI with smooth animations and accessible components. On the backend, I used Supabase for authentication, data management, and serverless logic, enabling secure user accounts, order handling, and scalable APIs.\n\nThe platform supports the full e-commerce flow—from product discovery to checkout—while maintaining fast load times and a clean user experience. Special care was taken to optimize server-side rendering, handle client/server state correctly, and ensure the site performs well on mobile devices."
+		overview:
+			"Mi Lalla's Touch is a modern e-commerce platform built for a luxury Moroccan fashion brand, focused on handcrafted pieces and premium brand presentation. I worked on the full stack, delivering a complete shopping experience with strong performance, SEO, and a polished, minimalist design.\n\nI implemented the frontend using Next.js (App Router) and TypeScript, building a mobile-first, responsive UI with smooth animations and accessible components. On the backend, I used Supabase for authentication, data management, and serverless logic, enabling secure user accounts, order handling, and scalable APIs.\n\nThe platform supports the full e-commerce flow—from product discovery to checkout—while maintaining fast load times and a clean user experience. Special care was taken to optimize server-side rendering, handle client/server state correctly, and ensure the site performs well on mobile devices."
 	},
 	"project-3": {
 		title: "Franchise Operations Manual Generator",
 		description: "AI-Powered Document Automation Platform",
 		tags: ["FULL-STACK", "AI"],
-		images: ["/project.3.1.png", "/project.3.2.png", "/project.3.3.png", "/project.3.4.png"],
-		gradient: "linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)",
+		images: [
+			"/project.3.1.png",
+			"/project.3.2.png",
+			"/project.3.3.png",
+			"/project.3.4.png"
+		],
+		gradient:
+			"linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)",
 		role: "Full-Stack Developer",
 		technologies: [
 			"Next.js",
@@ -77,14 +92,16 @@ const projects = {
 			"OpenAI API",
 			"Authentication & role-based access"
 		],
-		overview: "I built a full-stack web application for The Art of Franchising that automates the creation of franchise operations manuals. The platform replaces a manual, time-consuming process with a guided, AI-powered system that generates professional documents in minutes.\n\nThe application guides clients through a multi-step wizard covering 16 structured sections, with real-time auto-save, save-and-resume functionality, and optional voice input for accessibility. An admin dashboard allows reviewers to manage submissions and generate branded DOCX/PDF manuals with a single click.\n\nI worked across the entire stack, building the frontend with Next.js, developing the backend API with NestJS, and designing the database layer using Prisma. I integrated OpenAI to power intelligent document generation, mapping structured user input into well-formatted operational manuals. I also handled authentication, data persistence, and production deployment.\n\nThe solution is live and significantly reduced manual work, improved document consistency, and enabled the client to scale their operations more efficiently."
+		overview:
+			"I built a full-stack web application for The Art of Franchising that automates the creation of franchise operations manuals. The platform replaces a manual, time-consuming process with a guided, AI-powered system that generates professional documents in minutes.\n\nThe application guides clients through a multi-step wizard covering 16 structured sections, with real-time auto-save, save-and-resume functionality, and optional voice input for accessibility. An admin dashboard allows reviewers to manage submissions and generate branded DOCX/PDF manuals with a single click.\n\nI worked across the entire stack, building the frontend with Next.js, developing the backend API with NestJS, and designing the database layer using Prisma. I integrated OpenAI to power intelligent document generation, mapping structured user input into well-formatted operational manuals. I also handled authentication, data persistence, and production deployment.\n\nThe solution is live and significantly reduced manual work, improved document consistency, and enabled the client to scale their operations more efficiently."
 	},
 	"project-4": {
 		title: "Medan Orthodontics – AI Chatbot Solution",
 		description: "AI-Powered Patient Support (Web Widget & WhatsApp)",
 		tags: ["FULL-STACK", "AI"],
 		images: ["/project.4.1.png", "/project.4.2.png"],
-		gradient: "linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)",
+		gradient:
+			"linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)",
 		role: "Full-Stack Developer",
 		technologies: [
 			"NestJS",
@@ -100,7 +117,8 @@ const projects = {
 			"Webhooks",
 			"Tailwind CSS"
 		],
-		overview: "Built a production-ready conversational AI solution for a French orthodontics clinic, providing 24/7 patient support through two channels: an embeddable web chatbot widget and WhatsApp Business integration.\n\nThe chatbot handles patient inquiries using intelligent intent detection, routing conversations into dedicated flows for new patients, appointments, emergencies, and FAQs. It supports automatic French/English language detection, collects structured patient information, and sends summaries directly to the clinic via email to reduce administrative workload.\n\nI implemented the system end to end, building the backend with NestJS and PostgreSQL, integrating OpenAI for natural language understanding, and connecting Meta WhatsApp Cloud API for real-time messaging. The frontend includes a lightweight, embeddable chat widget that can be added to any website using a single script tag."
+		overview:
+			"Built a production-ready conversational AI solution for a French orthodontics clinic, providing 24/7 patient support through two channels: an embeddable web chatbot widget and WhatsApp Business integration.\n\nThe chatbot handles patient inquiries using intelligent intent detection, routing conversations into dedicated flows for new patients, appointments, emergencies, and FAQs. It supports automatic French/English language detection, collects structured patient information, and sends summaries directly to the clinic via email to reduce administrative workload.\n\nI implemented the system end to end, building the backend with NestJS and PostgreSQL, integrating OpenAI for natural language understanding, and connecting Meta WhatsApp Cloud API for real-time messaging. The frontend includes a lightweight, embeddable chat widget that can be added to any website using a single script tag."
 	},
 	"project-5": {
 		title: "Meta Monetization Manager",
@@ -108,7 +126,8 @@ const projects = {
 		tags: ["FULL-STACK", "AUTOMATION"],
 		image: "/project.5.png",
 		video: "/project.5.mp4",
-		gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
+		gradient:
+			"linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
 		role: "Full-Stack Developer",
 		technologies: [
 			"Next.js",
@@ -125,11 +144,16 @@ const projects = {
 			"OpenAI (Data Extraction)",
 			"Encrypted Credential Storage (AES-256-GCM)"
 		],
-		overview: "Built a full-stack web application that allows Facebook Page creators, managers, and agencies to monitor monetization tools across multiple Pages from a single dashboard.\n\nThe platform addresses a key limitation of the Facebook ecosystem: many monetization details (Stars, Subscriptions, In-Stream Ads, Brand Collabs, payout status, eligibility states) are not fully accessible via public APIs. To solve this, I combined a modern web dashboard with a secure browser automation system that synchronizes monetization data in real time.\n\nI developed the web application using Next.js (App Router), TypeScript, and PostgreSQL with Prisma. Authentication is handled through Facebook OAuth. For data not available through the Graph API, I built a Playwright-based automation bot that logs into Facebook, navigates monetization dashboards, and extracts structured data.\n\nA key challenge was handling Facebook security checks. I implemented an interactive verification system where the bot pauses when 2FA or security checkpoints appear, sends a screenshot to the dashboard, and waits for the user to enter verification codes (SMS, authenticator app, WhatsApp, etc.) in real time via WebSockets before continuing the flow.\n\nThe system provides live sync progress, per-page monetization status, payout visibility, and verification handling, significantly reducing manual effort when managing multiple Pages."
+		overview:
+			"Built a full-stack web application that allows Facebook Page creators, managers, and agencies to monitor monetization tools across multiple Pages from a single dashboard.\n\nThe platform addresses a key limitation of the Facebook ecosystem: many monetization details (Stars, Subscriptions, In-Stream Ads, Brand Collabs, payout status, eligibility states) are not fully accessible via public APIs. To solve this, I combined a modern web dashboard with a secure browser automation system that synchronizes monetization data in real time.\n\nI developed the web application using Next.js (App Router), TypeScript, and PostgreSQL with Prisma. Authentication is handled through Facebook OAuth. For data not available through the Graph API, I built a Playwright-based automation bot that logs into Facebook, navigates monetization dashboards, and extracts structured data.\n\nA key challenge was handling Facebook security checks. I implemented an interactive verification system where the bot pauses when 2FA or security checkpoints appear, sends a screenshot to the dashboard, and waits for the user to enter verification codes (SMS, authenticator app, WhatsApp, etc.) in real time via WebSockets before continuing the flow.\n\nThe system provides live sync progress, per-page monetization status, payout visibility, and verification handling, significantly reducing manual effort when managing multiple Pages."
 	}
 };
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
+export default function ProjectDetailPage({
+	params
+}: {
+	params: { slug: string };
+}) {
 	const router = useRouter();
 	const project = projects[params.slug as keyof typeof projects];
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -157,13 +181,13 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 			"0 2px 4px rgba(0, 0, 0, 0.12)",
 			"0 8px 16px rgba(0, 0, 0, 0.16)",
 			"0 24px 48px rgba(0, 0, 0, 0.24)"
-		].join(", "),
+		].join(", ")
 	};
 
 	return (
 		<div className="black-bg flex flex-col min-h-screen w-full relative z-10">
 			<span className="noise-overlay" />
-			
+
 			{/* Fixed top navigation bar with X button */}
 			<nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center py-4 px-5 md:px-6">
 				<button
@@ -178,11 +202,17 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 							"0 0 0 1px rgba(255, 255, 255, 0.05)",
 							"0 4px 12px rgba(0, 0, 0, 0.3)",
 							"0 8px 24px rgba(0, 0, 0, 0.4)"
-						].join(", "),
+						].join(", ")
 					}}
 					aria-label="Close"
 				>
-					<svg className="w-6 h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+					<svg
+						className="w-6 h-6 md:w-7 md:h-7 text-white"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2.5"
+					>
 						<line x1="18" y1="6" x2="6" y2="18" strokeLinecap="round" />
 						<line x1="6" y1="6" x2="18" y2="18" strokeLinecap="round" />
 					</svg>
@@ -191,21 +221,20 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
 			<main className="flex-1 flex flex-col items-center w-full pb-32 pt-20 md:pt-24">
 				<div className="w-full max-w-[900px] px-5 md:px-6">
-
 					{/* Project video/image */}
 					<div className="relative mb-8" style={cardStyle}>
 						<div
 							className="absolute inset-0 rounded-[40px] blur-[44px] pointer-events-none -z-10"
 							style={{
 								opacity: 0.3,
-								background: project.gradient,
+								background: project.gradient
 							}}
 						/>
 
 						<div
 							className="relative w-full h-[400px] md:h-[500px] rounded-t-[20px] overflow-hidden"
 							style={{
-								background: project.gradient,
+								background: project.gradient
 							}}
 						>
 							{"video" in project && project.video ? (
@@ -218,7 +247,9 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 								>
 									Your browser does not support the video tag.
 								</video>
-							) : "images" in project && project.images && project.images.length > 1 ? (
+							) : "images" in project &&
+							  project.images &&
+							  project.images.length > 0 ? (
 								<>
 									<Image
 										src={project.images[currentImageIndex]}
@@ -227,55 +258,90 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 										className="object-cover transition-opacity duration-300"
 										sizes="100vw"
 									/>
-									{/* Navigation arrows */}
-									<button
-										onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1))}
-										className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-										style={{
-											background: "rgba(0, 0, 0, 0.5)",
-											backdropFilter: "blur(8px)",
-											WebkitBackdropFilter: "blur(8px)",
-											border: "1px solid rgba(255, 255, 255, 0.2)",
-										}}
-										aria-label="Previous image"
-									>
-										<svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-											<path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-										</svg>
-									</button>
-									<button
-										onClick={() => setCurrentImageIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1))}
-										className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-										style={{
-											background: "rgba(0, 0, 0, 0.5)",
-											backdropFilter: "blur(8px)",
-											WebkitBackdropFilter: "blur(8px)",
-											border: "1px solid rgba(255, 255, 255, 0.2)",
-										}}
-										aria-label="Next image"
-									>
-										<svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-											<path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
-										</svg>
-									</button>
-									{/* Image indicators */}
-									<div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-										{project.images.map((_, index) => (
+									{project.images.length > 1 && (
+										<>
+											{/* Navigation arrows */}
 											<button
-												key={index}
-												onClick={() => setCurrentImageIndex(index)}
-												className={`w-2 h-2 rounded-full transition-all duration-200 ${
-													index === currentImageIndex ? "w-6" : ""
-												}`}
+												onClick={() =>
+													setCurrentImageIndex((prev) =>
+														prev === 0 ? project.images.length - 1 : prev - 1
+													)
+												}
+												className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
 												style={{
-													background: index === currentImageIndex ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 0.4)",
+													background: "rgba(0, 0, 0, 0.5)",
+													backdropFilter: "blur(8px)",
+													WebkitBackdropFilter: "blur(8px)",
+													border: "1px solid rgba(255, 255, 255, 0.2)"
 												}}
-												aria-label={`Go to image ${index + 1}`}
-											/>
-										))}
-									</div>
+												aria-label="Previous image"
+											>
+												<svg
+													className="w-5 h-5 text-white"
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													strokeWidth="2.5"
+												>
+													<path
+														d="M15 18l-6-6 6-6"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+													/>
+												</svg>
+											</button>
+											<button
+												onClick={() =>
+													setCurrentImageIndex((prev) =>
+														prev === project.images.length - 1 ? 0 : prev + 1
+													)
+												}
+												className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+												style={{
+													background: "rgba(0, 0, 0, 0.5)",
+													backdropFilter: "blur(8px)",
+													WebkitBackdropFilter: "blur(8px)",
+													border: "1px solid rgba(255, 255, 255, 0.2)"
+												}}
+												aria-label="Next image"
+											>
+												<svg
+													className="w-5 h-5 text-white"
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													strokeWidth="2.5"
+												>
+													<path
+														d="M9 18l6-6-6-6"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+													/>
+												</svg>
+											</button>
+											{/* Image indicators */}
+											<div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+												{project.images.map((_, index) => (
+													<button
+														key={index}
+														onClick={() => setCurrentImageIndex(index)}
+														className={`w-2 h-2 rounded-full transition-all duration-200 ${
+															index === currentImageIndex ? "w-6" : ""
+														}`}
+														style={{
+															background:
+																index === currentImageIndex
+																	? "rgba(255, 255, 255, 0.9)"
+																	: "rgba(255, 255, 255, 0.4)"
+														}}
+														aria-label={`Go to image ${index + 1}`}
+													/>
+												))}
+											</div>
+										</>
+									)}
 								</>
-							) : (
+							) : "image" in project && project.image ? (
 								<Image
 									src={project.image}
 									alt={project.title}
@@ -283,7 +349,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 									className="object-cover"
 									sizes="100vw"
 								/>
-							)}
+							) : null}
 						</div>
 					</div>
 
@@ -296,7 +362,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 								background: `
 									radial-gradient(circle at 50% 50%, rgba(249, 168, 212, 0.25), transparent 60%),
 									radial-gradient(circle at 80% 20%, rgba(110, 231, 183, 0.2), transparent 60%)
-								`,
+								`
 							}}
 						/>
 
@@ -304,13 +370,13 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 							<h1 className="text-white text-3xl md:text-4xl font-semibold mb-2 tracking-[-0.02em]">
 								{project.title}
 							</h1>
-							
+
 							{"role" in project && project.role && (
 								<p className="text-white/60 text-base md:text-lg mb-6">
 									Role: <span className="text-white/80">{project.role}</span>
 								</p>
 							)}
-							
+
 							<div className="flex flex-wrap gap-2 mb-6">
 								{project.tags.map((tag, tagIndex) => (
 									<span
@@ -336,28 +402,30 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 								</div>
 							</div>
 
-							{"technologies" in project && project.technologies && project.technologies.length > 0 && (
-								<div className="mb-6">
-									<h2 className="text-white text-xl md:text-2xl font-medium mb-4 tracking-[-0.02em]">
-										Technologies
-									</h2>
-									<div className="flex flex-wrap gap-2.5">
-										{project.technologies.map((tech, techIndex) => (
-											<span
-												key={techIndex}
-												className="px-4 py-2 rounded-lg text-sm font-medium"
-												style={{
-													background: "rgba(255, 255, 255, 0.1)",
-													color: "rgba(255, 255, 255, 0.9)",
-													border: "1px solid rgba(255, 255, 255, 0.15)"
-												}}
-											>
-												{tech}
-											</span>
-										))}
+							{"technologies" in project &&
+								project.technologies &&
+								project.technologies.length > 0 && (
+									<div className="mb-6">
+										<h2 className="text-white text-xl md:text-2xl font-medium mb-4 tracking-[-0.02em]">
+											Technologies
+										</h2>
+										<div className="flex flex-wrap gap-2.5">
+											{project.technologies.map((tech, techIndex) => (
+												<span
+													key={techIndex}
+													className="px-4 py-2 rounded-lg text-sm font-medium"
+													style={{
+														background: "rgba(255, 255, 255, 0.1)",
+														color: "rgba(255, 255, 255, 0.9)",
+														border: "1px solid rgba(255, 255, 255, 0.15)"
+													}}
+												>
+													{tech}
+												</span>
+											))}
+										</div>
 									</div>
-								</div>
-							)}
+								)}
 						</div>
 					</div>
 				</div>
@@ -367,4 +435,3 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 		</div>
 	);
 }
-

@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 export default function Hero() {
 	const router = useRouter();
 	const [isHovered, setIsHovered] = useState(false);
-	const baseText = "text-[28px] md:text-[34px] font-semibold tracking-[-0.02em]";
+	const baseText =
+		"text-[28px] md:text-[34px] font-semibold tracking-[-0.02em]";
 
 	// Using the 5 project PNG images
 	const projects = [
@@ -43,7 +44,7 @@ export default function Hero() {
 
 	return (
 		<section className="flex flex-col items-center justify-center w-full px-5 md:px-6 py-10 md:py-14 relative z-10 overflow-visible">
-			<div 
+			<div
 				className="relative flex justify-center items-center"
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}
@@ -53,20 +54,20 @@ export default function Hero() {
 				{projects.map((project, index) => {
 					const spread = getSpreadPosition(project.position);
 					const delay = getDelay();
-					
+
 					return (
 						<div
 							key={index}
 							className="absolute"
 							style={{
 								zIndex: isHovered ? index : 5 - index,
-								transform: isHovered 
+								transform: isHovered
 									? `translate(${spread.x}px, ${spread.y}px) rotate(${spread.rotate}deg) scale(1)`
-									: `translate(0px, 0px) rotate(0deg) scale(0.9)`,
+									: "translate(0px, 0px) rotate(0deg) scale(0.9)",
 								opacity: isHovered ? 1 : 0,
 								transition: `all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s`,
 								pointerEvents: isHovered ? "auto" : "none",
-								cursor: isHovered ? "pointer" : "default",
+								cursor: isHovered ? "pointer" : "default"
 							}}
 							onClick={() => {
 								if (isHovered) {
@@ -74,12 +75,12 @@ export default function Hero() {
 								}
 							}}
 						>
-							<div 
+							<div
 								className="rounded-[16px] overflow-hidden transition-all duration-200 hover:scale-105"
 								style={{
 									width: "200px",
 									height: "150px",
-									boxShadow: isHovered 
+									boxShadow: isHovered
 										? "0 25px 50px rgba(0, 0, 0, 0.35)"
 										: "0 10px 30px rgba(0, 0, 0, 0.2)"
 								}}
@@ -166,8 +167,18 @@ export default function Hero() {
 								}}
 							>
 								<span className="text-gray-800">launch</span>
-								<svg className="w-7 h-7 md:w-8 md:h-8 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-									<path d="M7 17L17 7M17 7H10M17 7V14" strokeLinecap="round" strokeLinejoin="round" />
+								<svg
+									className="w-7 h-7 md:w-8 md:h-8 text-gray-800"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2.5"
+								>
+									<path
+										d="M7 17L17 7M17 7H10M17 7V14"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									/>
 								</svg>
 							</span>
 						</div>
