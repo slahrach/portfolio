@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Image from "next/image";
 import BottomNav from "@/components/bottom-nav/bottom-nav";
 import Footer from "@/components/footer/footer";
@@ -36,12 +37,26 @@ const projects = {
 		overview: "The founder initially had a prototype MVP to validate the concept of a social crypto-trading platform. I joined to rebuild and evolve the product step by step, turning the prototype into a scalable, production-ready system capable of supporting real users and real-time interactions.\n\nI was responsible for the entire backend, from architecture and API design to infrastructure and deployments. This included building real-time chat and notifications, multi-chain blockchain integrations (EVM & Solana), staking and trading integrations, background job processing, caching, and a scalable WebSocket infrastructure. I also designed and maintained the CI/CD pipelines, Dockerized environments, and production deployments, ensuring stability as usage increased.\n\nAs the platform matured technically and functionally, the improved performance, reliability, and feature depth played a key role in helping the founder raise significant funding. TNTX.ai is now live in beta, with users actively testing the platform and ongoing development continuing as the product scales."
 	},
 	"project-2": {
-		title: "Project 2",
-		description: "Developing a microservices architecture",
-		tags: ["BACKEND", "DEVOPS"],
-		image: "/project.2.png",
+		title: "Mi Lalla's Touch",
+		description: "Luxury E-commerce Platform for Moroccan Fashion",
+		tags: ["FULL-STACK", "E-COMMERCE"],
+		image: "/project.2.1.png",
+		images: ["/project.2.1.png", "/project.2.2.png", "/project.2.3.png", "/project.2.4.png"],
 		gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
-		overview: "I architected and implemented Genie's microservices infrastructure, breaking down a monolithic application into independent, scalable services. I set up containerization with Docker, orchestrated services using Kubernetes, and implemented service mesh for inter-service communication. The system includes CI/CD pipelines, automated testing, and comprehensive monitoring for each service."
+		role: "Full-Stack Developer",
+		technologies: [
+			"Next.js 15 (App Router)",
+			"React 19",
+			"TypeScript",
+			"Tailwind CSS",
+			"Supabase (Auth, Edge Functions)",
+			"Framer Motion",
+			"Radix UI",
+			"Vercel",
+			"Server-Side Rendering",
+			"Responsive & Accessible Design"
+		],
+		overview: "Mi Lalla's Touch is a modern e-commerce platform built for a luxury Moroccan fashion brand, focused on handcrafted pieces and premium brand presentation. I worked on the full stack, delivering a complete shopping experience with strong performance, SEO, and a polished, minimalist design.\n\nI implemented the frontend using Next.js (App Router) and TypeScript, building a mobile-first, responsive UI with smooth animations and accessible components. On the backend, I used Supabase for authentication, data management, and serverless logic, enabling secure user accounts, order handling, and scalable APIs.\n\nThe platform supports the full e-commerce flow—from product discovery to checkout—while maintaining fast load times and a clean user experience. Special care was taken to optimize server-side rendering, handle client/server state correctly, and ensure the site performs well on mobile devices."
 	},
 	"project-3": {
 		title: "Project 3",
@@ -72,6 +87,7 @@ const projects = {
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
 	const router = useRouter();
 	const project = projects[params.slug as keyof typeof projects];
+	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 	if (!project) {
 		return (
@@ -157,6 +173,63 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 								>
 									Your browser does not support the video tag.
 								</video>
+							) : "images" in project && project.images && project.images.length > 1 ? (
+								<>
+									<Image
+										src={project.images[currentImageIndex]}
+										alt={`${project.title} - Image ${currentImageIndex + 1}`}
+										fill
+										className="object-cover transition-opacity duration-300"
+										sizes="100vw"
+									/>
+									{/* Navigation arrows */}
+									<button
+										onClick={() => setCurrentImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1))}
+										className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+										style={{
+											background: "rgba(0, 0, 0, 0.5)",
+											backdropFilter: "blur(8px)",
+											WebkitBackdropFilter: "blur(8px)",
+											border: "1px solid rgba(255, 255, 255, 0.2)",
+										}}
+										aria-label="Previous image"
+									>
+										<svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+											<path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+										</svg>
+									</button>
+									<button
+										onClick={() => setCurrentImageIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1))}
+										className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+										style={{
+											background: "rgba(0, 0, 0, 0.5)",
+											backdropFilter: "blur(8px)",
+											WebkitBackdropFilter: "blur(8px)",
+											border: "1px solid rgba(255, 255, 255, 0.2)",
+										}}
+										aria-label="Next image"
+									>
+										<svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+											<path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
+										</svg>
+									</button>
+									{/* Image indicators */}
+									<div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+										{project.images.map((_, index) => (
+											<button
+												key={index}
+												onClick={() => setCurrentImageIndex(index)}
+												className={`w-2 h-2 rounded-full transition-all duration-200 ${
+													index === currentImageIndex ? "w-6" : ""
+												}`}
+												style={{
+													background: index === currentImageIndex ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 0.4)",
+												}}
+												aria-label={`Go to image ${index + 1}`}
+											/>
+										))}
+									</div>
+								</>
 							) : (
 								<Image
 									src={project.image}

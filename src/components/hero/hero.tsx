@@ -12,7 +12,7 @@ export default function Hero() {
 	// Using the 5 project PNG images
 	const projects = [
 		{ src: "/project.1.png", position: "top-left", slug: "project-1" },
-		{ src: "/project.2.png", position: "top-right", slug: "project-2" },
+		{ src: "/project.2.1.png", position: "top-right", slug: "project-2" },
 		{ src: "/project.3.png", position: "bottom-left", slug: "project-3" },
 		{ src: "/project.4.png", position: "bottom-center", slug: "project-4" },
 		{ src: "/project.5.png", position: "bottom-right", slug: "project-5" }

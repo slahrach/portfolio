@@ -20,10 +20,10 @@ export default function Projects() {
 		},
 		{
 			slug: "project-2",
-			title: "Project 2",
-			description: "Developing a microservices architecture",
-			tags: ["BACKEND", "DEVOPS"],
-			image: "/project.2.png",
+			title: "Mi Lalla's Touch",
+			description: "Luxury E-commerce Platform for Moroccan Fashion",
+			tags: ["FULL-STACK", "E-COMMERCE"],
+			image: "/project.2.1.png",
 			gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		},
 		{
