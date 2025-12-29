@@ -152,18 +152,18 @@ export default function BottomNav() {
 
 	// Determine active index based on current pathname
 	const getActiveIndex = () => {
-		if (pathname === "/about") return 2; // About me
-		if (pathname === "/projects") return 1; // Projects
-		if (pathname === "/" || pathname.startsWith("/#")) return 0; // Home
-		return 0; // Default to home
+		const cleanPath = pathname.replace(/^\/portfolio/, "") || "/";
+		if (cleanPath === "/about" || cleanPath.startsWith("/about/")) return 2;
+		if (cleanPath === "/projects" || cleanPath.startsWith("/projects/"))
+			return 1;
+		if (cleanPath === "/" || cleanPath.startsWith("/#")) return 0;
+		return 0;
 	};
 
 	const [activeIndex, setActiveIndex] = useState(getActiveIndex());
 
-	// Update active index when pathname changes
 	useEffect(() => {
 		setActiveIndex(getActiveIndex());
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathname]);
 
 	// Pages group with girly/pastel colors
