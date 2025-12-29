@@ -9,13 +9,13 @@ export default function Hero() {
 	const [isHovered, setIsHovered] = useState(false);
 	const baseText = "text-[28px] md:text-[34px] font-semibold tracking-[-0.02em]";
 
-	// All using projet1.avif as requested, mapped to project slugs
+	// Using the 5 project PNG images
 	const projects = [
-		{ src: "/projet1.avif", position: "top-left", slug: "nexus" },
-		{ src: "/projet1.avif", position: "top-right", slug: "genie" },
-		{ src: "/projet1.avif", position: "bottom-left", slug: "flow" },
-		{ src: "/projet1.avif", position: "bottom-center", slug: "aurora" },
-		{ src: "/projet1.avif", position: "bottom-right", slug: "nexus" }
+		{ src: "/project.1.png", position: "top-left", slug: "project-1" },
+		{ src: "/project.2.png", position: "top-right", slug: "project-2" },
+		{ src: "/project.3.png", position: "bottom-left", slug: "project-3" },
+		{ src: "/project.4.png", position: "bottom-center", slug: "project-4" },
+		{ src: "/project.5..png", position: "bottom-right", slug: "project-5" }
 	];
 
 	// Final spread positions when hovered - cards positioned around main card, mostly visible with small part behind

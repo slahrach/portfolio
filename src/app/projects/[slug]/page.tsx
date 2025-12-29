@@ -6,37 +6,45 @@ import BottomNav from "@/components/bottom-nav/bottom-nav";
 import Footer from "@/components/footer/footer";
 
 const projects = {
-	nexus: {
-		title: "Nexus",
+	"project-1": {
+		title: "Project 1",
 		description: "Building a scalable API platform",
 		tags: ["BACKEND", "API"],
-		image: "/projet1.avif",
+		image: "/project.1.png",
 		gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)",
 		overview: "Nexus is a high-performance API platform I built to handle millions of requests per day. I architected the system using microservices, implemented rate limiting, caching strategies, and built comprehensive monitoring and logging. The platform supports REST and GraphQL APIs, with automatic scaling and load balancing to ensure reliability under high traffic."
 	},
-	genie: {
-		title: "Genie",
+	"project-2": {
+		title: "Project 2",
 		description: "Developing a microservices architecture",
 		tags: ["BACKEND", "DEVOPS"],
-		image: "/project2.avif",
+		image: "/project.2.png",
 		gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
 		overview: "I architected and implemented Genie's microservices infrastructure, breaking down a monolithic application into independent, scalable services. I set up containerization with Docker, orchestrated services using Kubernetes, and implemented service mesh for inter-service communication. The system includes CI/CD pipelines, automated testing, and comprehensive monitoring for each service."
 	},
-	flow: {
-		title: "Flow",
+	"project-3": {
+		title: "Project 3",
 		description: "Building a seamless workflow platform",
 		tags: ["FULL-STACK", "DEVOPS"],
-		image: "/projects.avif",
+		image: "/project.3.png",
 		gradient: "linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)",
 		overview: "Flow is a comprehensive workflow platform designed to streamline team collaboration and project management. I built the entire system from the ground up, focusing on backend architecture, API design, and scalable infrastructure. The platform handles real-time updates, file management, and complex workflow automation while maintaining high performance and reliability."
 	},
-	aurora: {
-		title: "Aurora",
+	"project-4": {
+		title: "Project 4",
 		description: "Creating an AI-powered analytics dashboard",
 		tags: ["BACKEND", "AI"],
-		image: "/projet1.avif",
+		image: "/project.4.png",
 		gradient: "linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)",
 		overview: "Aurora is an AI-powered analytics dashboard that provides real-time insights and predictive analytics. I developed the backend infrastructure, integrated machine learning models, and built APIs that process large datasets efficiently. The system uses advanced algorithms to generate actionable insights while maintaining fast response times and data accuracy."
+	},
+	"project-5": {
+		title: "Project 5",
+		description: "Designing a real-time collaboration system",
+		tags: ["FULL-STACK", "REALTIME"],
+		image: "/project.5..png",
+		gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)",
+		overview: "I built a real-time collaboration system that enables teams to work together seamlessly. The platform features WebSocket connections for instant updates, conflict resolution algorithms, and a robust backend that handles concurrent editing. I implemented efficient data synchronization, user presence indicators, and a scalable architecture that supports thousands of simultaneous users."
 	}
 };
 

@@ -11,36 +11,44 @@ export default function Projects() {
 
 	const projects = [
 		{
-			slug: "nexus",
-			title: "Nexus",
+			slug: "project-1",
+			title: "Project 1",
 			description: "Building a scalable API platform",
 			tags: ["BACKEND", "API"],
-			image: "/projet1.avif",
+			image: "/project.1.png",
 			gradient: "linear-gradient(135deg, rgba(255, 181, 141, 0.3) 0%, rgba(249, 168, 212, 0.3) 100%)"
 		},
 		{
-			slug: "genie",
-			title: "Genie",
+			slug: "project-2",
+			title: "Project 2",
 			description: "Developing a microservices architecture",
 			tags: ["BACKEND", "DEVOPS"],
-			image: "/project2.avif",
+			image: "/project.2.png",
 			gradient: "linear-gradient(135deg, rgba(125, 211, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		},
 		{
-			slug: "flow",
-			title: "Flow",
+			slug: "project-3",
+			title: "Project 3",
 			description: "Building a seamless workflow platform",
 			tags: ["FULL-STACK", "DEVOPS"],
-			image: "/projects.avif",
+			image: "/project.3.png",
 			gradient: "linear-gradient(135deg, rgba(110, 231, 183, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%)"
 		},
 		{
-			slug: "aurora",
-			title: "Aurora",
+			slug: "project-4",
+			title: "Project 4",
 			description: "Creating an AI-powered analytics dashboard",
 			tags: ["BACKEND", "AI"],
-			image: "/projet1.avif",
+			image: "/project.4.png",
 			gradient: "linear-gradient(135deg, rgba(255, 243, 137, 0.3) 0%, rgba(255, 181, 141, 0.3) 100%)"
+		},
+		{
+			slug: "project-5",
+			title: "Project 5",
+			description: "Designing a real-time collaboration system",
+			tags: ["FULL-STACK", "REALTIME"],
+			image: "/project.5..png",
+			gradient: "linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
 		}
 	];
 
