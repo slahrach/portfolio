@@ -150,6 +150,43 @@ const projects = {
 		],
 		overview:
 			"Built a full-stack web application that allows Facebook Page creators, managers, and agencies to monitor monetization tools across multiple Pages from a single dashboard.\n\nThe platform addresses a key limitation of the Facebook ecosystem: many monetization details (Stars, Subscriptions, In-Stream Ads, Brand Collabs, payout status, eligibility states) are not fully accessible via public APIs. To solve this, I combined a modern web dashboard with a secure browser automation system that synchronizes monetization data in real time.\n\nI developed the web application using Next.js (App Router), TypeScript, and PostgreSQL with Prisma. Authentication is handled through Facebook OAuth. For data not available through the Graph API, I built a Playwright-based automation bot that logs into Facebook, navigates monetization dashboards, and extracts structured data.\n\nA key challenge was handling Facebook security checks. I implemented an interactive verification system where the bot pauses when 2FA or security checkpoints appear, sends a screenshot to the dashboard, and waits for the user to enter verification codes (SMS, authenticator app, WhatsApp, etc.) in real time via WebSockets before continuing the flow.\n\nThe system provides live sync progress, per-page monetization status, payout visibility, and verification handling, significantly reducing manual effort when managing multiple Pages."
+	},
+	"project-6": {
+		title: "AI Companion Platform",
+		description: "Multi-Modal Conversational AI System",
+		tags: ["BACKEND", "AI"],
+		images: [
+			getAssetPath("/project.6.1.webp"),
+			getAssetPath("/project.6.2.webp"),
+			getAssetPath("/project.6.3.webp")
+		],
+		gradient:
+			"linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%)",
+		role: "AI/Backend Developer",
+		technologies: [
+			"NestJS 9",
+			"TypeScript",
+			"Prisma 5",
+			"PostgreSQL",
+			"Python",
+			"FastAPI",
+			"PyTorch",
+			"Hugging Face Diffusers",
+			"Ollama",
+			"Mistral 7B",
+			"FastText",
+			"Stable Diffusion XL (SDXL)",
+			"Bland.ai",
+			"Docker",
+			"REST APIs",
+			"WebSocket",
+			"Swagger/OpenAPI",
+			"JWT Authentication",
+			"OAuth (Google, Discord)",
+			"Open Source AI Models"
+		],
+		overview:
+			"Worked as the AI/Backend Developer on a scalable AI companion platform that enables users to create and interact with customizable AI personas through multiple modalities—text, images, and voice. I architected and implemented the entire backend infrastructure and AI inference pipeline.\n\nI built the multi-modal AI system by integrating and optimizing open-source models for production use. This included deploying Ollama with Mistral 7B for conversational AI, implementing Stable Diffusion XL (SDXL) with custom fine-tuning and pipeline optimizations, and configuring FastText for intent classification to route requests between chat and image generation modes. The AI inference service runs on GPU-optimized infrastructure with memory management strategies to handle production workloads efficiently.\n\nI developed the NestJS REST API backend handling business logic, authentication, and user management, while building a separate Python FastAPI service to orchestrate all AI model inference operations. I implemented a type-safe database layer with Prisma ORM and PostgreSQL, ensuring data integrity and efficient querying. Authentication includes JWT with refresh tokens and OAuth integration for Google and Discord.\n\nI integrated real-time voice capabilities using Bland.ai, including webhook handling for transcript processing. The backend supports a token-based economy with subscription tiers and usage tracking, automatic conversation history pagination with message threading, and comprehensive API documentation with Swagger/OpenAPI.\n\nTechnical optimizations I implemented include an enhanced SDXL pipeline with attention slicing, VAE tiling, and xFormers for improved performance, advanced prompt engineering using Compel for better image quality, and memory-efficient GPU operations with CUDA optimization. The intent-based routing system uses confidence thresholds to ensure accurate mode switching between chat and image generation."
 	}
 };
 

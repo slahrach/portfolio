@@ -5,7 +5,8 @@ const projectSlugs = [
 	"project-2",
 	"project-3",
 	"project-4",
-	"project-5"
+	"project-5",
+	"project-6"
 ];
 
 export function generateStaticParams() {

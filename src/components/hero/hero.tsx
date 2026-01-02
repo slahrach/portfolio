@@ -40,9 +40,9 @@ export default function Hero() {
 			slug: "project-3"
 		},
 		{
-			src: getAssetPath("/project.4.png"),
+			src: getAssetPath("/project.6.png"),
 			position: "bottom-center",
-			slug: "project-4"
+			slug: "project-6"
 		},
 		{
 			src: getAssetPath("/project.5.png"),

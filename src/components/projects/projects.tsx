@@ -58,6 +58,15 @@ export default function Projects() {
 			image: getAssetPath("/project.5.png"),
 			gradient:
 				"linear-gradient(135deg, rgba(249, 168, 212, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)"
+		},
+		{
+			slug: "project-6",
+			title: "AI Companion Platform",
+			description: "Multi-Modal Conversational AI System",
+			tags: ["BACKEND", "AI"],
+			image: getAssetPath("/project.6.png"),
+			gradient:
+				"linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%)"
 		}
 	];
 
